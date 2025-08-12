@@ -11,8 +11,6 @@ from _plotly_utils.colors import (
     convert_colorscale_to_rgb,
     convert_dict_colors_to_same_type,
     convert_to_RGB_255,
-    cyclical,
-    diverging,
     find_intermediate_color,
     get_colorscale,
     hex_to_rgb,
@@ -21,9 +19,7 @@ from _plotly_utils.colors import (
     n_colors,
     named_colorscales,
     plotlyjs,
-    qualitative,
     sample_colorscale,
-    sequential,
     unconvert_from_RGB_255,
     unlabel_rgb,
     validate_colors,
@@ -31,6 +27,8 @@ from _plotly_utils.colors import (
     validate_colorscale,
     validate_scale_values,
 )
+
+from . import cyclical, diverging, qualitative, sequential
 
 __all__ = [
     "DEFAULT_PLOTLY_COLORS",
