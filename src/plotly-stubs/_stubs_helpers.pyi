@@ -1,6 +1,7 @@
 from collections.abc import Sequence
 from typing import Any, Literal, Protocol, TypeAlias, TypedDict
 
+import numpy as np
 import pandas as pd
 import polars as pl
 from numpy.typing import NDArray
@@ -14,13 +15,13 @@ class DataFrameCompatible(Protocol):
     def __dataframe__(self, nan_as_null: bool = ..., allow_copy: bool = ...) -> Any: ...
 
 ArrayLike: TypeAlias = Sequence[Any] | pd.Series | pl.Series | NDArray[Any] | pd.Index
+# Assumes that the user know the type of pl.Series, which is easily checked at runtime.
+ArrayLikeNumeric: TypeAlias = Sequence[float] | NDArray[np.float64] | pd.Series[float] | pl.Series | pd.Index[float]
 FrameOrDict: TypeAlias = DataFrameCompatible | dict[str, ArrayLike] | Sequence[dict[str, Any]]
 ColumnData: TypeAlias = str | int | ArrayLike
 MultiColumnData: TypeAlias = ColumnData | list[ColumnData]
 HoverData: TypeAlias = ColumnData | list[str] | dict[str, bool | str | ArrayLike]
-MapIdentity: TypeAlias = (
-    dict[str | int, str] | Literal["identity"]
-)  # Would rather use dict[str, str] | dict[int, str], but is currently technically correct for pandas.
+MapIdentity: TypeAlias = dict[str | int, str] | Literal["identity"] | dict[str, str] | dict[int, str]
 
 RenderMode: TypeAlias = Literal["auto", "webgl", "svg"]
 TrendLineScope: TypeAlias = Literal["trace", "overall"]

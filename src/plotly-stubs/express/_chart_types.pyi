@@ -2,8 +2,7 @@ from collections.abc import Sequence
 from typing import Any, Literal
 
 import plotly.graph_objs as go
-
-from ._stubs_helpers import (
+from plotly._stubs_helpers import (
     ArrayLike,
     BarMode,
     BranchVals,
