@@ -4,6 +4,7 @@ from typing import Any
 
 import numpy as np
 import pandas as pd
+from plotly._stubs_helpers import ArrayLike, ArrayLikeFloat, ArrayLikeString
 from plotly.basedatatypes import BaseTraceType as _BaseTraceType
 from plotly.graph_objs.candlestick import Decreasing, Hoverlabel, Increasing, Legendgrouptitle, Line, Stream
 
@@ -14,11 +15,9 @@ class Candlestick(_BaseTraceType):
     @property
     def close(
         self,
-    ) -> Sequence[float] | np.ndarray[tuple[int, ...], np.dtype[np.float64]] | pd.Series[float]: ...
+    ) -> ArrayLikeFloat: ...
     @close.setter
-    def close(
-        self, val: Sequence[float] | np.ndarray[tuple[int, ...], np.dtype[np.float64]] | pd.Series[float]
-    ) -> None: ...
+    def close(self, val: ArrayLikeFloat) -> None: ...
     @property
     def closesrc(self) -> str | None: ...
     @closesrc.setter
@@ -26,11 +25,9 @@ class Candlestick(_BaseTraceType):
     @property
     def customdata(
         self,
-    ) -> Sequence[float] | np.ndarray[tuple[int, ...], np.dtype[np.float64]] | pd.Series[float]: ...
+    ) -> ArrayLikeFloat: ...
     @customdata.setter
-    def customdata(
-        self, val: Sequence[float] | np.ndarray[tuple[int, ...], np.dtype[np.float64]] | pd.Series[float]
-    ) -> None: ...
+    def customdata(self, val: ArrayLikeFloat) -> None: ...
     @property
     def customdatasrc(self) -> str | None: ...
     @customdatasrc.setter
@@ -40,11 +37,9 @@ class Candlestick(_BaseTraceType):
     @decreasing.setter
     def decreasing(self, val: Decreasing | dict[str, Any]) -> None: ...
     @property
-    def high(self) -> Sequence[float] | np.ndarray[tuple[int, ...], np.dtype[np.float64]] | pd.Series[float]: ...
+    def high(self) -> ArrayLikeFloat: ...
     @high.setter
-    def high(
-        self, val: Sequence[float] | np.ndarray[tuple[int, ...], np.dtype[np.float64]] | pd.Series[float]
-    ) -> None: ...
+    def high(self, val: ArrayLikeFloat) -> None: ...
     @property
     def highsrc(self) -> str | None: ...
     @highsrc.setter
@@ -72,11 +67,9 @@ class Candlestick(_BaseTraceType):
     @hovertextsrc.setter
     def hovertextsrc(self, val: str | None) -> None: ...
     @property
-    def ids(self) -> Sequence[str] | np.ndarray[tuple[int, ...], np.dtype[np.str_]] | pd.Series[str] | None: ...
+    def ids(self) -> ArrayLikeString | None: ...
     @ids.setter
-    def ids(
-        self, val: Sequence[str] | np.ndarray[tuple[int, ...], np.dtype[np.str_]] | pd.Series[str] | None
-    ) -> None: ...
+    def ids(self, val: ArrayLikeString | None) -> None: ...
     @property
     def idssrc(self) -> str | None: ...
     @idssrc.setter
@@ -110,11 +103,9 @@ class Candlestick(_BaseTraceType):
     @line.setter
     def line(self, val: Line | dict[str, str | int | float]) -> None: ...
     @property
-    def low(self) -> Sequence[float] | np.ndarray[tuple[int, ...], np.dtype[np.float64]] | pd.Series[float]: ...
+    def low(self) -> ArrayLikeFloat: ...
     @low.setter
-    def low(
-        self, val: Sequence[float] | np.ndarray[tuple[int, ...], np.dtype[np.float64]] | pd.Series[float]
-    ) -> None: ...
+    def low(self, val: ArrayLikeFloat) -> None: ...
     @property
     def lowsrc(self) -> str | None: ...
     @lowsrc.setter
@@ -136,11 +127,9 @@ class Candlestick(_BaseTraceType):
     @opacity.setter
     def opacity(self, val: int | float | None) -> None: ...
     @property
-    def open(self) -> Sequence[float] | np.ndarray[tuple[int, ...], np.dtype[np.float64]] | pd.Series[float]: ...
+    def open(self) -> ArrayLikeFloat: ...
     @open.setter
-    def open(
-        self, val: Sequence[float] | np.ndarray[tuple[int, ...], np.dtype[np.float64]] | pd.Series[float]
-    ) -> None: ...
+    def open(self, val: ArrayLikeFloat) -> None: ...
     @property
     def opensrc(self) -> str | None: ...
     @opensrc.setter
@@ -186,9 +175,9 @@ class Candlestick(_BaseTraceType):
     @whiskerwidth.setter
     def whiskerwidth(self, val: int | float | None) -> None: ...
     @property
-    def x(self) -> Sequence[Any] | np.ndarray[tuple[int, ...], np.dtype[Any]] | pd.Series[Any]: ...
+    def x(self) -> ArrayLike: ...
     @x.setter
-    def x(self, val: Sequence[Any] | np.ndarray[tuple[int, ...], np.dtype[Any]] | pd.Series[Any]) -> None: ...
+    def x(self, val: ArrayLike) -> None: ...
     @property
     def xaxis(self) -> str | None: ...
     @xaxis.setter
@@ -234,12 +223,12 @@ class Candlestick(_BaseTraceType):
     def __init__(
         self,
         arg: Candlestick | dict[str, Any] | None = ...,
-        close: Sequence[float] | np.ndarray[tuple[int, ...], np.dtype[np.float64]] | pd.Series[float] | None = ...,
+        close: ArrayLikeFloat | None = ...,
         closesrc: str | None = ...,
-        customdata: Sequence[float] | np.ndarray[tuple[int, ...], np.dtype[np.float64]] | pd.Series[float] | None = ...,
+        customdata: ArrayLikeFloat | None = ...,
         customdatasrc: str | None = ...,
         decreasing: Decreasing | dict[str, Any] | None = ...,
-        high: Sequence[float] | np.ndarray[tuple[int, ...], np.dtype[np.float64]] | pd.Series[float] | None = ...,
+        high: ArrayLikeFloat | None = ...,
         highsrc: str | None = ...,
         hoverinfo: str | Sequence[str] | None = ...,
         hoverinfosrc: str | None = ...,
@@ -251,7 +240,7 @@ class Candlestick(_BaseTraceType):
         | np.ndarray[tuple[int, ...], np.dtype[np.float64]]
         | None = ...,
         hovertextsrc: str | None = ...,
-        ids: Sequence[str] | np.ndarray[tuple[int, ...], np.dtype[np.str_]] | pd.Series[str] | None = ...,
+        ids: ArrayLikeString | None = ...,
         idssrc: str | None = ...,
         increasing: Increasing | dict[str, Any] | None = ...,
         legend: str | None = ...,
@@ -260,13 +249,13 @@ class Candlestick(_BaseTraceType):
         legendrank: int | float | None = ...,
         legendwidth: int | float | None = ...,
         line: Line | dict[str, str | int | float] | None = ...,
-        low: Sequence[float] | np.ndarray[tuple[int, ...], np.dtype[np.float64]] | pd.Series[float] | None = ...,
+        low: ArrayLikeFloat | None = ...,
         lowsrc: str | None = ...,
         meta: Sequence[Any] | dict[str, Any] | np.ndarray[tuple[int, ...], Any] | None = ...,
         metasrc: str | None = ...,
         name: str | int | None = ...,
         opacity: int | float | None = ...,
-        open: Sequence[float] | np.ndarray[tuple[int, ...], np.dtype[np.float64]] | pd.Series[float] | None = ...,
+        open: ArrayLikeFloat | None = ...,
         opensrc: str | None = ...,
         selectedpoints: Sequence[int] | None = ...,
         showlegend: bool | None = ...,
@@ -282,7 +271,7 @@ class Candlestick(_BaseTraceType):
         uirevision: Hashable | None = ...,
         visible: bool | str | None = ...,
         whiskerwidth: int | float | None = ...,
-        x: Sequence[Any] | np.ndarray[tuple[int, ...], np.dtype[Any]] | pd.Series[Any] | None = ...,
+        x: ArrayLike | None = ...,
         xaxis: str | None = ...,
         xcalendar: str | None = ...,
         xhoverformat: str | None = ...,

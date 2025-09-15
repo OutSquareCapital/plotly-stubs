@@ -15,8 +15,10 @@ class DataFrameCompatible(Protocol):
     def __dataframe__(self, nan_as_null: bool = ..., allow_copy: bool = ...) -> Any: ...
 
 ArrayLike: TypeAlias = Sequence[Any] | pd.Series | pl.Series | NDArray[Any] | pd.Index
+ArrayLikeFloat: TypeAlias = Sequence[float] | NDArray[np.float64] | pd.Series[float] | pl.Series | pd.Index[float]
 # Assumes that the user know the type of pl.Series, which is easily checked at runtime.
-ArrayLikeNumeric: TypeAlias = Sequence[float] | NDArray[np.float64] | pd.Series[float] | pl.Series | pd.Index[float]
+ArrayLikeNumeric: TypeAlias = Sequence[int] | ArrayLikeFloat
+ArrayLikeString: TypeAlias = Sequence[str] | NDArray[np.str_] | pd.Series[str] | pl.Series | pd.Index[str]
 FrameOrDict: TypeAlias = DataFrameCompatible | dict[str, ArrayLike] | Sequence[dict[str, Any]]
 ColumnData: TypeAlias = str | int | ArrayLike
 MultiColumnData: TypeAlias = ColumnData | list[ColumnData]

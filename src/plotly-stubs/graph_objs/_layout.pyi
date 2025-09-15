@@ -6,6 +6,7 @@ import numpy as np
 import pandas as pd
 import plotly.graph_objs.layout.newselection as _newselection
 import plotly.graph_objs.layout.template as _template
+from plotly._stubs_helpers import ArrayLikeString
 from plotly.basedatatypes import BaseLayoutType as _BaseLayoutType
 from plotly.graph_objs.layout import (
     Activeselection,
@@ -122,9 +123,7 @@ class Layout(_BaseLayoutType):
     @property
     def colorway(self) -> Sequence[str]: ...
     @colorway.setter
-    def colorway(
-        self, val: Sequence[str] | np.ndarray[tuple[int, ...], np.dtype[np.str_]] | pd.Series[str]
-    ) -> None: ...
+    def colorway(self, val: ArrayLikeString) -> None: ...
     @property
     def computed(self) -> Any | None: ...
     @computed.setter
@@ -168,9 +167,7 @@ class Layout(_BaseLayoutType):
     @property
     def funnelareacolorway(self) -> Sequence[str]: ...
     @funnelareacolorway.setter
-    def funnelareacolorway(
-        self, val: Sequence[str] | np.ndarray[tuple[int, ...], np.dtype[np.str_]] | pd.Series[str]
-    ) -> None: ...
+    def funnelareacolorway(self, val: ArrayLikeString) -> None: ...
     @property
     def funnelgap(self) -> int | float | None: ...
     @funnelgap.setter
@@ -198,9 +195,7 @@ class Layout(_BaseLayoutType):
     @property
     def hiddenlabels(self) -> Sequence[str]: ...
     @hiddenlabels.setter
-    def hiddenlabels(
-        self, val: Sequence[str] | np.ndarray[tuple[int, ...], np.dtype[np.str_]] | pd.Series[str]
-    ) -> None: ...
+    def hiddenlabels(self, val: ArrayLikeString) -> None: ...
     @property
     def hiddenlabelssrc(self) -> str | None: ...
     @hiddenlabelssrc.setter
@@ -228,9 +223,7 @@ class Layout(_BaseLayoutType):
     @property
     def iciclecolorway(self) -> Sequence[str]: ...
     @iciclecolorway.setter
-    def iciclecolorway(
-        self, val: Sequence[str] | np.ndarray[tuple[int, ...], np.dtype[np.str_]] | pd.Series[str]
-    ) -> None: ...
+    def iciclecolorway(self, val: ArrayLikeString) -> None: ...
     @property
     def images(self) -> Sequence[Image]: ...
     @images.setter
@@ -290,9 +283,7 @@ class Layout(_BaseLayoutType):
     @property
     def piecolorway(self) -> Sequence[str]: ...
     @piecolorway.setter
-    def piecolorway(
-        self, val: Sequence[str] | np.ndarray[tuple[int, ...], np.dtype[np.str_]] | pd.Series[str]
-    ) -> None: ...
+    def piecolorway(self, val: ArrayLikeString) -> None: ...
     @property
     def plot_bgcolor(self) -> str | None: ...
     @plot_bgcolor.setter
@@ -364,9 +355,7 @@ class Layout(_BaseLayoutType):
     @property
     def sunburstcolorway(self) -> Sequence[str]: ...
     @sunburstcolorway.setter
-    def sunburstcolorway(
-        self, val: Sequence[str] | np.ndarray[tuple[int, ...], np.dtype[np.str_]] | pd.Series[str]
-    ) -> None: ...
+    def sunburstcolorway(self, val: ArrayLikeString) -> None: ...
     @property
     def template(self) -> Template: ...
     @template.setter
@@ -386,9 +375,7 @@ class Layout(_BaseLayoutType):
     @property
     def treemapcolorway(self) -> Sequence[str]: ...
     @treemapcolorway.setter
-    def treemapcolorway(
-        self, val: Sequence[str] | np.ndarray[tuple[int, ...], np.dtype[np.str_]] | pd.Series[str]
-    ) -> None: ...
+    def treemapcolorway(self, val: ArrayLikeString) -> None: ...
     @property
     def uirevision(self) -> Hashable | None: ...
     @uirevision.setter
@@ -462,7 +449,7 @@ class Layout(_BaseLayoutType):
         clickmode: str | None = ...,
         coloraxis: str | None = ...,
         colorscale: str | list[str] | list[tuple[float, str]] | None = ...,
-        colorway: Sequence[str] | np.ndarray[tuple[int, ...], np.dtype[np.str_]] | pd.Series[str] | None = ...,
+        colorway: ArrayLikeString | None = ...,
         computed: Any | None = ...,
         datarevision: Hashable | None = ...,
         dragmode: str | bool | None = ...,
@@ -483,14 +470,14 @@ class Layout(_BaseLayoutType):
         geo: Geo | dict[str, Any] | None = ...,
         grid: Grid | dict[str, Any] | None = ...,
         height: int | float | None = ...,
-        hiddenlabels: Sequence[str] | np.ndarray[tuple[int, ...], np.dtype[np.str_]] | pd.Series[str] | None = ...,
+        hiddenlabels: ArrayLikeString | None = ...,
         hiddenlabelssrc: str | None = ...,
         hidesources: bool | None = ...,
         hoverdistance: int | None = ...,
         hoverlabel: Hoverlabel | dict[str, Any] | None = ...,
         hovermode: str | bool | None = ...,
         hoversubplots: str | None = ...,
-        iciclecolorway: Sequence[str] | np.ndarray[tuple[int, ...], np.dtype[np.str_]] | pd.Series[str] | None = ...,
+        iciclecolorway: ArrayLikeString | None = ...,
         images: Sequence[Image] | Sequence[dict[str, Any]] | None = ...,
         imagedefaults: Image | dict[str, Any] | None = ...,
         legend: Legend | dict[str, Any] | None = ...,
@@ -505,7 +492,7 @@ class Layout(_BaseLayoutType):
         newselection: Newselection | dict[str, _newselection.Line | dict[str, Any] | str] | None = ...,
         newshape: Newshape | dict[str, Any] | None = ...,
         paper_bgcolor: str | None = ...,
-        piecolorway: Sequence[str] | np.ndarray[tuple[int, ...], np.dtype[np.str_]] | pd.Series[str] | None = ...,
+        piecolorway: ArrayLikeString | None = ...,
         plot_bgcolor: str | None = ...,
         polar: Polar | dict[str, Any] | None = ...,
         scattergap: int | float | None = ...,
@@ -523,12 +510,12 @@ class Layout(_BaseLayoutType):
         sliderdefaults: Slider | dict[str, Any] | None = ...,
         smith: Smith | dict[str, Any] | None = ...,
         spikedistance: int | None = ...,
-        sunburstcolorway: Sequence[str] | np.ndarray[tuple[int, ...], np.dtype[np.str_]] | pd.Series[str] | None = ...,
+        sunburstcolorway: ArrayLikeString | None = ...,
         template: Template | dict[str, _template.Data | Layout | dict[str, Any]] | None = ...,
         ternary: Ternary | dict[str, Any] | None = ...,
         title: Title | dict[str, Any] | str | None = ...,
         transition: Transition | dict[str, Any] | None = ...,
-        treemapcolorway: Sequence[str] | np.ndarray[tuple[int, ...], np.dtype[np.str_]] | pd.Series[str] | None = ...,
+        treemapcolorway: ArrayLikeString | None = ...,
         uirevision: Hashable | None = ...,
         uniformtext: Uniformtext | dict[str, int | float | str] | None = ...,
         updatemenus: Sequence[Updatemenu] | Sequence[dict[str, Any]] | None = ...,

@@ -4,6 +4,7 @@ from typing import Any
 
 import numpy as np
 import pandas as pd
+from plotly._stubs_helpers import ArrayLikeFloat, ArrayLikeNumeric, ArrayLikeString
 from plotly.basedatatypes import BaseTraceType as _BaseTraceType
 from plotly.graph_objs.surface import (
     ColorBar,
@@ -60,11 +61,9 @@ class Surface(_BaseTraceType):
     @contours.setter
     def contours(self, val: Contours | dict[str, Any]) -> None: ...
     @property
-    def customdata(self) -> Sequence[float] | np.ndarray[tuple[int, ...], np.dtype[np.float64]] | pd.Series[float]: ...
+    def customdata(self) -> ArrayLikeFloat: ...
     @customdata.setter
-    def customdata(
-        self, val: Sequence[float] | np.ndarray[tuple[int, ...], np.dtype[np.float64]] | pd.Series[float]
-    ) -> None: ...
+    def customdata(self, val: ArrayLikeFloat) -> None: ...
     @property
     def customdatasrc(self) -> str | None: ...
     @customdatasrc.setter
@@ -112,7 +111,7 @@ class Surface(_BaseTraceType):
     @property
     def ids(self) -> Sequence[str]: ...
     @ids.setter
-    def ids(self, val: Sequence[str] | np.ndarray[tuple[int, ...], np.dtype[np.str_]] | pd.Series[str]) -> None: ...
+    def ids(self, val: ArrayLikeString) -> None: ...
     @property
     def idssrc(self) -> str | None: ...
     @idssrc.setter
@@ -192,9 +191,7 @@ class Surface(_BaseTraceType):
     @property
     def surfacecolor(self) -> Sequence[str]: ...
     @surfacecolor.setter
-    def surfacecolor(
-        self, val: Sequence[str] | np.ndarray[tuple[int, ...], np.dtype[np.str_]] | pd.Series[str]
-    ) -> None: ...
+    def surfacecolor(self, val: ArrayLikeString) -> None: ...
     @property
     def surfacecolorsrc(self) -> str | None: ...
     @surfacecolorsrc.setter
@@ -224,11 +221,11 @@ class Surface(_BaseTraceType):
     @property
     def x(
         self,
-    ) -> Sequence[int] | Sequence[float] | np.ndarray[tuple[int, ...], np.dtype[np.float64]] | pd.Series[float]: ...
+    ) -> ArrayLikeNumeric: ...
     @x.setter
     def x(
         self,
-        val: Sequence[int] | Sequence[float] | np.ndarray[tuple[int, ...], np.dtype[np.float64]] | pd.Series[float],
+        val: ArrayLikeNumeric,
     ) -> None: ...
     @property
     def xcalendar(self) -> str | None: ...
@@ -245,11 +242,11 @@ class Surface(_BaseTraceType):
     @property
     def y(
         self,
-    ) -> Sequence[int] | Sequence[float] | np.ndarray[tuple[int, ...], np.dtype[np.float64]] | pd.Series[float]: ...
+    ) -> ArrayLikeNumeric: ...
     @y.setter
     def y(
         self,
-        val: Sequence[int] | Sequence[float] | np.ndarray[tuple[int, ...], np.dtype[np.float64]] | pd.Series[float],
+        val: ArrayLikeNumeric,
     ) -> None: ...
     @property
     def ycalendar(self) -> str | None: ...
@@ -266,11 +263,11 @@ class Surface(_BaseTraceType):
     @property
     def z(
         self,
-    ) -> Sequence[int] | Sequence[float] | np.ndarray[tuple[int, ...], np.dtype[np.float64]] | pd.Series[float]: ...
+    ) -> ArrayLikeNumeric: ...
     @z.setter
     def z(
         self,
-        val: Sequence[int] | Sequence[float] | np.ndarray[tuple[int, ...], np.dtype[np.float64]] | pd.Series[float],
+        val: ArrayLikeNumeric,
     ) -> None: ...
     @property
     def zcalendar(self) -> str | None: ...
@@ -299,7 +296,7 @@ class Surface(_BaseTraceType):
         colorscale: str | list[str] | list[tuple[float, str]] | None = ...,
         connectgaps: bool | None = ...,
         contours: Contours | dict[str, Any] | None = ...,
-        customdata: Sequence[float] | np.ndarray[tuple[int, ...], np.dtype[np.float64]] | pd.Series[float] | None = ...,
+        customdata: ArrayLikeFloat | None = ...,
         customdatasrc: str | None = ...,
         hidesurface: bool | None = ...,
         hoverinfo: str | Sequence[str] | None = ...,
@@ -319,7 +316,7 @@ class Surface(_BaseTraceType):
         | np.ndarray[tuple[int, ...], np.dtype[np.float64]]
         | None = ...,
         hovertextsrc: str | None = ...,
-        ids: Sequence[str] | np.ndarray[tuple[int, ...], np.dtype[np.str_]] | pd.Series[str] | None = ...,
+        ids: ArrayLikeString | None = ...,
         idssrc: str | None = ...,
         legend: str | None = ...,
         legendgroup: str | int | None = ...,
@@ -340,7 +337,7 @@ class Surface(_BaseTraceType):
         showlegend: bool | None = ...,
         showscale: bool | None = ...,
         stream: Stream | dict[str, int | str] | None = ...,
-        surfacecolor: Sequence[str] | np.ndarray[tuple[int, ...], np.dtype[np.str_]] | pd.Series[str] | None = ...,
+        surfacecolor: ArrayLikeString | None = ...,
         surfacecolorsrc: str | None = ...,
         text: str
         | float

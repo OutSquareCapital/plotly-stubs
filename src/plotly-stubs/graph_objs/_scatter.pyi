@@ -6,6 +6,7 @@ import numpy as np
 import pandas as pd
 import plotly.graph_objs.scatter.selected as _selected
 import plotly.graph_objs.scatter.unselected as _unselected
+from plotly._stubs_helpers import ArrayLike, ArrayLikeFloat, ArrayLikeNumeric, ArrayLikeString
 from plotly.basedatatypes import BaseTraceType as _BaseTraceType
 from plotly.graph_objs.scatter import (
     ErrorX,
@@ -39,11 +40,9 @@ class Scatter(_BaseTraceType):
     @connectgaps.setter
     def connectgaps(self, val: bool | None) -> None: ...
     @property
-    def customdata(self) -> Sequence[float] | np.ndarray[tuple[int, ...], np.dtype[np.float64]] | pd.Series[float]: ...
+    def customdata(self) -> ArrayLikeFloat: ...
     @customdata.setter
-    def customdata(
-        self, val: Sequence[float] | np.ndarray[tuple[int, ...], np.dtype[np.float64]] | pd.Series[float]
-    ) -> None: ...
+    def customdata(self, val: ArrayLikeFloat) -> None: ...
     @property
     def customdatasrc(self) -> str | None: ...
     @customdatasrc.setter
@@ -125,7 +124,7 @@ class Scatter(_BaseTraceType):
     @property
     def ids(self) -> Sequence[str]: ...
     @ids.setter
-    def ids(self, val: Sequence[str] | np.ndarray[tuple[int, ...], np.dtype[np.str_]] | pd.Series[str]) -> None: ...
+    def ids(self, val: ArrayLikeString) -> None: ...
     @property
     def idssrc(self) -> str | None: ...
     @idssrc.setter
@@ -263,11 +262,11 @@ class Scatter(_BaseTraceType):
     @property
     def x(
         self,
-    ) -> Sequence[Any] | np.ndarray[tuple[int, ...], np.dtype[Any]] | pd.Series[Any]: ...
+    ) -> ArrayLike: ...
     @x.setter
     def x(
         self,
-        val: Sequence[Any] | np.ndarray[tuple[int, ...], np.dtype[Any]] | pd.Series[Any],
+        val: ArrayLike,
     ) -> None: ...
     @property
     def x0(self) -> int | float | None: ...
@@ -304,11 +303,11 @@ class Scatter(_BaseTraceType):
     @property
     def y(
         self,
-    ) -> Sequence[int] | Sequence[float] | np.ndarray[tuple[int, ...], np.dtype[np.float64]] | pd.Series[float]: ...
+    ) -> ArrayLikeNumeric: ...
     @y.setter
     def y(
         self,
-        val: Sequence[int] | Sequence[float] | np.ndarray[tuple[int, ...], np.dtype[np.float64]] | pd.Series[float],
+        val: ArrayLikeNumeric,
     ) -> None: ...
     @property
     def y0(self) -> int | float | None: ...
@@ -354,7 +353,7 @@ class Scatter(_BaseTraceType):
         alignmentgroup: str | int | None = ...,
         cliponaxis: bool | None = ...,
         connectgaps: bool | None = ...,
-        customdata: Sequence[float] | np.ndarray[tuple[int, ...], np.dtype[np.float64]] | pd.Series[float] | None = ...,
+        customdata: ArrayLikeFloat | None = ...,
         customdatasrc: str | None = ...,
         dx: int | float | None = ...,
         dy: int | float | None = ...,
@@ -383,7 +382,7 @@ class Scatter(_BaseTraceType):
         | np.ndarray[tuple[int, ...], np.dtype[np.float64]]
         | None = ...,
         hovertextsrc: str | None = ...,
-        ids: Sequence[str] | np.ndarray[tuple[int, ...], np.dtype[np.str_]] | pd.Series[str] | None = ...,
+        ids: ArrayLikeString | None = ...,
         idssrc: str | None = ...,
         legend: str | None = ...,
         legendgroup: str | int | None = ...,
@@ -416,7 +415,7 @@ class Scatter(_BaseTraceType):
         uirevision: Hashable | None = ...,
         unselected: Unselected | dict[str, _unselected.Marker | _unselected.Textfont | dict[str, Any]] | None = ...,
         visible: bool | str | None = ...,
-        x: Sequence[Any] | np.ndarray[tuple[int, ...], np.dtype[Any]] | pd.Series[Any] | None = ...,
+        x: ArrayLike | None = ...,
         x0: int | float | None = ...,
         xaxis: str | None = ...,
         xcalendar: str | None = ...,
@@ -425,11 +424,7 @@ class Scatter(_BaseTraceType):
         xperiod0: int | float | str | None = ...,
         xperiodalignment: str | None = ...,
         xsrc: str | None = ...,
-        y: Sequence[int]
-        | Sequence[float]
-        | np.ndarray[tuple[int, ...], np.dtype[np.float64]]
-        | pd.Series[float]
-        | None = ...,
+        y: ArrayLikeNumeric | None = ...,
         y0: int | float | None = ...,
         yaxis: str | None = ...,
         ycalendar: str | None = ...,

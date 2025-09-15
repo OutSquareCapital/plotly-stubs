@@ -3,6 +3,7 @@ from typing import Any
 
 import numpy as np
 import pandas as pd
+from plotly._stubs_helpers import ArrayLikeString
 from plotly.basedatatypes import BaseTraceHierarchyType as _BaseTraceHierarchyType
 from plotly.graph_objs.candlestick.hoverlabel import Font
 
@@ -19,21 +20,17 @@ class Hoverlabel(_BaseTraceHierarchyType):
     @alignsrc.setter
     def alignsrc(self, val: str | None) -> None: ...
     @property
-    def bgcolor(self) -> str | Sequence[str] | np.ndarray[tuple[int, ...], np.dtype[np.str_]] | pd.Series[str]: ...
+    def bgcolor(self) -> str | ArrayLikeString: ...
     @bgcolor.setter
-    def bgcolor(
-        self, val: str | Sequence[str] | np.ndarray[tuple[int, ...], np.dtype[np.str_]] | pd.Series[str]
-    ) -> None: ...
+    def bgcolor(self, val: str | ArrayLikeString) -> None: ...
     @property
     def bgcolorsrc(self) -> str | None: ...
     @bgcolorsrc.setter
     def bgcolorsrc(self, val: str | None) -> None: ...
     @property
-    def bordercolor(self) -> str | Sequence[str] | np.ndarray[tuple[int, ...], np.dtype[np.str_]] | pd.Series[str]: ...
+    def bordercolor(self) -> str | ArrayLikeString: ...
     @bordercolor.setter
-    def bordercolor(
-        self, val: str | Sequence[str] | np.ndarray[tuple[int, ...], np.dtype[np.str_]] | pd.Series[str]
-    ) -> None: ...
+    def bordercolor(self, val: str | ArrayLikeString) -> None: ...
     @property
     def bordercolorsrc(self) -> str | None: ...
     @bordercolorsrc.setter
@@ -82,9 +79,9 @@ class Hoverlabel(_BaseTraceHierarchyType):
         arg: Hoverlabel | dict[str, Any] | None = ...,
         align: str | Sequence[str] | np.ndarray[tuple[int], np.dtype[np.str_]] | None = ...,
         alignsrc: str | None = ...,
-        bgcolor: str | Sequence[str] | np.ndarray[tuple[int, ...], np.dtype[np.str_]] | pd.Series[str] | None = ...,
+        bgcolor: str | ArrayLikeString | None = ...,
         bgcolorsrc: str | None = ...,
-        bordercolor: str | Sequence[str] | np.ndarray[tuple[int, ...], np.dtype[np.str_]] | pd.Series[str] | None = ...,
+        bordercolor: str | ArrayLikeString | None = ...,
         bordercolorsrc: str | None = ...,
         font: Font | dict[str, Any] | None = ...,
         namelength: int

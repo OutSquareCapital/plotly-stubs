@@ -53,6 +53,7 @@ import plotly.graph_objs.treemap as treemap
 import plotly.graph_objs.violin as violin
 import plotly.graph_objs.volume as volume
 import plotly.graph_objs.waterfall as waterfall
+from plotly._stubs_helpers import ArrayLike, ArrayLikeFloat, ArrayLikeNumeric, ArrayLikeString
 from plotly.basedatatypes import BaseFigure, BaseLayoutHierarchyType, BaseLayoutType, BaseTraceType
 from plotly.graph_objs import (
     Frame,
@@ -185,7 +186,7 @@ class Figure(BaseFigure):
         basesrc: str = ...,
         cliponaxis: bool = ...,
         constraintext: str = ...,
-        customdata: Sequence[float] | np.ndarray[tuple[int, ...], np.dtype[np.float64]] | pd.Series[float] = ...,
+        customdata: ArrayLikeFloat = ...,
         customdatasrc: str = ...,
         dx: int | float = ...,
         dy: int | float = ...,
@@ -206,7 +207,7 @@ class Figure(BaseFigure):
         | Sequence[float]
         | np.ndarray[tuple[int, ...], np.dtype[np.float64]] = ...,
         hovertextsrc: str = ...,
-        ids: Sequence[str] | np.ndarray[tuple[int, ...], np.dtype[np.str_]] | pd.Series[str] = ...,
+        ids: ArrayLikeString = ...,
         idssrc: str = ...,
         insidetextanchor: str = ...,
         insidetextfont: bar.Insidetextfont | dict[str, Any] = ...,
@@ -245,9 +246,9 @@ class Figure(BaseFigure):
         uirevision: Hashable = ...,
         unselected: bar.Unselected | dict[str, bar.unselected.Marker | bar.unselected.Textfont | dict[str, Any]] = ...,
         visible: bool | str = ...,
-        width: int | float | Sequence[int] | Sequence[float] | np.ndarray[tuple[int, ...], np.dtype[np.float64]] = ...,
+        width: int | float | ArrayLikeNumeric = ...,
         widthsrc: str = ...,
-        x: Sequence[Any] | np.ndarray[tuple[int, ...], np.dtype[Any]] | pd.Series[Any] | None = ...,
+        x: ArrayLike | None = ...,
         x0: int | float = ...,
         xaxis: str = ...,
         xcalendar: str = ...,
@@ -256,7 +257,7 @@ class Figure(BaseFigure):
         xperiod0: int | float | str = ...,
         xperiodalignment: str = ...,
         xsrc: str = ...,
-        y: Sequence[int] | Sequence[float] | np.ndarray[tuple[int, ...], np.dtype[np.float64]] | pd.Series[float] = ...,
+        y: ArrayLikeNumeric = ...,
         y0: int | float = ...,
         yaxis: str = ...,
         ycalendar: str = ...,
@@ -275,7 +276,7 @@ class Figure(BaseFigure):
         self,
         base=...,  # pyright: ignore[reportMissingParameterType]
         basesrc: str = ...,
-        customdata: Sequence[float] | np.ndarray[tuple[int, ...], np.dtype[np.float64]] | pd.Series[float] = ...,
+        customdata: ArrayLikeFloat = ...,
         customdatasrc: str = ...,
         dr=...,  # pyright: ignore[reportMissingParameterType]
         dtheta=...,  # pyright: ignore[reportMissingParameterType]
@@ -294,7 +295,7 @@ class Figure(BaseFigure):
         | Sequence[float]
         | np.ndarray[tuple[int, ...], np.dtype[np.float64]] = ...,
         hovertextsrc: str = ...,
-        ids: Sequence[str] | np.ndarray[tuple[int, ...], np.dtype[np.str_]] | pd.Series[str] = ...,
+        ids: ArrayLikeString = ...,
         idssrc: str = ...,
         legend: str = ...,
         legendgroup: str | int = ...,
@@ -339,7 +340,7 @@ class Figure(BaseFigure):
         alignmentgroup: str = ...,
         boxmean: bool | str = ...,
         boxpoints: bool | str = ...,
-        customdata: Sequence[float] | np.ndarray[tuple[int, ...], np.dtype[np.float64]] | pd.Series[float] = ...,
+        customdata: ArrayLikeFloat = ...,
         customdatasrc: str = ...,
         dx: int | float = ...,
         dy: int | float = ...,
@@ -360,7 +361,7 @@ class Figure(BaseFigure):
         | Sequence[float]
         | np.ndarray[tuple[int, ...], np.dtype[np.float64]] = ...,
         hovertextsrc: str = ...,
-        ids: Sequence[str] | np.ndarray[tuple[int, ...], np.dtype[np.str_]] | pd.Series[str] = ...,
+        ids: ArrayLikeString = ...,
         idssrc: str = ...,
         jitter: int | float = ...,
         legend: str = ...,
@@ -375,27 +376,27 @@ class Figure(BaseFigure):
         | pd.Series[float] = ...,
         lowerfencesrc: str = ...,
         marker: box.Marker | dict[str, Any] = ...,
-        mean: Sequence[float] | np.ndarray[tuple[int, ...], np.dtype[np.float64]] | pd.Series[float] = ...,
+        mean: ArrayLikeFloat = ...,
         meansrc: str = ...,
-        median: Sequence[float] | np.ndarray[tuple[int, ...], np.dtype[np.float64]] | pd.Series[float] = ...,
+        median: ArrayLikeFloat = ...,
         mediansrc: str = ...,
         meta: Sequence[Any] | dict[str, Any] | np.ndarray[tuple[int, ...], Any] = ...,
         metasrc: str = ...,
         name: str | int = ...,
         notched: bool = ...,
-        notchspan: Sequence[float] | np.ndarray[tuple[int, ...], np.dtype[np.float64]] | pd.Series[float] = ...,
+        notchspan: ArrayLikeFloat = ...,
         notchspansrc: str = ...,
         notchwidth: int | float = ...,
         offsetgroup: str | int = ...,
         opacity: int | float = ...,
         orientation: str = ...,
         pointpos: int | float = ...,
-        q1: Sequence[float] | np.ndarray[tuple[int, ...], np.dtype[np.float64]] | pd.Series[float] = ...,
+        q1: ArrayLikeFloat = ...,
         q1src: str = ...,
-        q3: Sequence[float] | np.ndarray[tuple[int, ...], np.dtype[np.float64]] | pd.Series[float] = ...,
+        q3: ArrayLikeFloat = ...,
         q3src: str = ...,
         quartilemethod: str = ...,
-        sd: Sequence[float] | np.ndarray[tuple[int, ...], np.dtype[np.float64]] | pd.Series[float] = ...,
+        sd: ArrayLikeFloat = ...,
         sdmultiple: int | float = ...,
         sdsrc: str = ...,
         selected: box.Selected | dict[str, box.selected.Marker | dict[str, Any]] = ...,
@@ -417,7 +418,7 @@ class Figure(BaseFigure):
         visible: bool | str = ...,
         whiskerwidth: int | float = ...,
         width: int | float = ...,
-        x: Sequence[int] | Sequence[float] | np.ndarray[tuple[int, ...], np.dtype[np.float64]] | pd.Series[float] = ...,
+        x: ArrayLikeNumeric = ...,
         x0: int | float = ...,
         xaxis: str = ...,
         xcalendar: str = ...,
@@ -426,7 +427,7 @@ class Figure(BaseFigure):
         xperiod0: int | float | str = ...,
         xperiodalignment: str = ...,
         xsrc: str = ...,
-        y: Sequence[int] | Sequence[float] | np.ndarray[tuple[int, ...], np.dtype[np.float64]] | pd.Series[float] = ...,
+        y: ArrayLikeNumeric = ...,
         y0: int | float = ...,
         yaxis: str = ...,
         ycalendar: str = ...,
@@ -445,7 +446,7 @@ class Figure(BaseFigure):
         self,
         close=...,  # pyright: ignore[reportMissingParameterType]
         closesrc: str = ...,
-        customdata: Sequence[float] | np.ndarray[tuple[int, ...], np.dtype[np.float64]] | pd.Series[float] = ...,
+        customdata: ArrayLikeFloat = ...,
         customdatasrc: str = ...,
         decreasing=...,  # pyright: ignore[reportMissingParameterType]
         high=...,  # pyright: ignore[reportMissingParameterType]
@@ -459,7 +460,7 @@ class Figure(BaseFigure):
         | Sequence[float]
         | np.ndarray[tuple[int, ...], np.dtype[np.float64]] = ...,
         hovertextsrc: str = ...,
-        ids: Sequence[str] | np.ndarray[tuple[int, ...], np.dtype[np.str_]] | pd.Series[str] = ...,
+        ids: ArrayLikeString = ...,
         idssrc: str = ...,
         increasing=...,  # pyright: ignore[reportMissingParameterType]
         legend: str = ...,
@@ -514,12 +515,12 @@ class Figure(BaseFigure):
         carpet=...,  # pyright: ignore[reportMissingParameterType]
         cheaterslope=...,  # pyright: ignore[reportMissingParameterType]
         color=...,  # pyright: ignore[reportMissingParameterType]
-        customdata: Sequence[float] | np.ndarray[tuple[int, ...], np.dtype[np.float64]] | pd.Series[float] = ...,
+        customdata: ArrayLikeFloat = ...,
         customdatasrc: str = ...,
         da=...,  # pyright: ignore[reportMissingParameterType]
         db=...,  # pyright: ignore[reportMissingParameterType]
         font=...,  # pyright: ignore[reportMissingParameterType]
-        ids: Sequence[str] | np.ndarray[tuple[int, ...], np.dtype[np.str_]] | pd.Series[str] = ...,
+        ids: ArrayLikeString = ...,
         idssrc: str = ...,
         legend: str = ...,
         legendgrouptitle: carpet.Legendgrouptitle | dict[str, Any] = ...,
@@ -551,7 +552,7 @@ class Figure(BaseFigure):
         coloraxis: str = ...,
         colorbar: choropleth.ColorBar | dict[str, Any] = ...,
         colorscale: str | list[str] | list[tuple[float, str]] = ...,
-        customdata: Sequence[float] | np.ndarray[tuple[int, ...], np.dtype[np.float64]] | pd.Series[float] = ...,
+        customdata: ArrayLikeFloat = ...,
         customdatasrc: str = ...,
         featureidkey=...,  # pyright: ignore[reportMissingParameterType]
         geo=...,  # pyright: ignore[reportMissingParameterType]
@@ -571,7 +572,7 @@ class Figure(BaseFigure):
         | Sequence[float]
         | np.ndarray[tuple[int, ...], np.dtype[np.float64]] = ...,
         hovertextsrc: str = ...,
-        ids: Sequence[str] | np.ndarray[tuple[int, ...], np.dtype[np.str_]] | pd.Series[str] = ...,
+        ids: ArrayLikeString = ...,
         idssrc: str = ...,
         legend: str = ...,
         legendgroup: str | int = ...,
@@ -614,7 +615,7 @@ class Figure(BaseFigure):
         coloraxis: str = ...,
         colorbar: choroplethmap.ColorBar | dict[str, Any] = ...,
         colorscale: str | list[str] | list[tuple[float, str]] = ...,
-        customdata: Sequence[float] | np.ndarray[tuple[int, ...], np.dtype[np.float64]] | pd.Series[float] = ...,
+        customdata: ArrayLikeFloat = ...,
         customdatasrc: str = ...,
         featureidkey=...,  # pyright: ignore[reportMissingParameterType]
         geojson=...,  # pyright: ignore[reportMissingParameterType]
@@ -633,7 +634,7 @@ class Figure(BaseFigure):
         | Sequence[float]
         | np.ndarray[tuple[int, ...], np.dtype[np.float64]] = ...,
         hovertextsrc: str = ...,
-        ids: Sequence[str] | np.ndarray[tuple[int, ...], np.dtype[np.str_]] | pd.Series[str] = ...,
+        ids: ArrayLikeString = ...,
         idssrc: str = ...,
         legend: str = ...,
         legendgroup: str | int = ...,
@@ -676,7 +677,7 @@ class Figure(BaseFigure):
         coloraxis: str = ...,
         colorbar: choroplethmapbox.ColorBar | dict[str, Any] = ...,
         colorscale: str | list[str] | list[tuple[float, str]] = ...,
-        customdata: Sequence[float] | np.ndarray[tuple[int, ...], np.dtype[np.float64]] | pd.Series[float] = ...,
+        customdata: ArrayLikeFloat = ...,
         customdatasrc: str = ...,
         featureidkey=...,  # pyright: ignore[reportMissingParameterType]
         geojson=...,  # pyright: ignore[reportMissingParameterType]
@@ -695,7 +696,7 @@ class Figure(BaseFigure):
         | Sequence[float]
         | np.ndarray[tuple[int, ...], np.dtype[np.float64]] = ...,
         hovertextsrc: str = ...,
-        ids: Sequence[str] | np.ndarray[tuple[int, ...], np.dtype[np.str_]] | pd.Series[str] = ...,
+        ids: ArrayLikeString = ...,
         idssrc: str = ...,
         legend: str = ...,
         legendgroup: str | int = ...,
@@ -742,7 +743,7 @@ class Figure(BaseFigure):
         coloraxis: str = ...,
         colorbar: cone.ColorBar | dict[str, Any] = ...,
         colorscale: str | list[str] | list[tuple[float, str]] = ...,
-        customdata: Sequence[float] | np.ndarray[tuple[int, ...], np.dtype[np.float64]] | pd.Series[float] = ...,
+        customdata: ArrayLikeFloat = ...,
         customdatasrc: str = ...,
         hoverinfo: str | Sequence[str] = ...,
         hoverinfosrc: str = ...,
@@ -759,7 +760,7 @@ class Figure(BaseFigure):
         | Sequence[float]
         | np.ndarray[tuple[int, ...], np.dtype[np.float64]] = ...,
         hovertextsrc: str = ...,
-        ids: Sequence[str] | np.ndarray[tuple[int, ...], np.dtype[np.str_]] | pd.Series[str] = ...,
+        ids: ArrayLikeString = ...,
         idssrc: str = ...,
         legend: str = ...,
         legendgroup: str | int = ...,
@@ -816,7 +817,7 @@ class Figure(BaseFigure):
         colorscale: str | list[str] | list[tuple[float, str]] = ...,
         connectgaps: bool = ...,
         contours: contour.Contours | dict[str, Any] = ...,
-        customdata: Sequence[float] | np.ndarray[tuple[int, ...], np.dtype[np.float64]] | pd.Series[float] = ...,
+        customdata: ArrayLikeFloat = ...,
         customdatasrc: str = ...,
         dx: int | float = ...,
         dy: int | float = ...,
@@ -837,7 +838,7 @@ class Figure(BaseFigure):
         | Sequence[float]
         | np.ndarray[tuple[int, ...], np.dtype[np.float64]] = ...,
         hovertextsrc: str = ...,
-        ids: Sequence[str] | np.ndarray[tuple[int, ...], np.dtype[np.str_]] | pd.Series[str] = ...,
+        ids: ArrayLikeString = ...,
         idssrc: str = ...,
         legend: str = ...,
         legendgroup: str | int = ...,
@@ -862,7 +863,7 @@ class Figure(BaseFigure):
         uid: str | int = ...,
         uirevision: Hashable = ...,
         visible: bool | str = ...,
-        x: Sequence[int] | Sequence[float] | np.ndarray[tuple[int, ...], np.dtype[np.float64]] | pd.Series[float] = ...,
+        x: ArrayLikeNumeric = ...,
         x0: int | float = ...,
         xaxis: str = ...,
         xcalendar: str = ...,
@@ -872,7 +873,7 @@ class Figure(BaseFigure):
         xperiodalignment: str = ...,
         xsrc: str = ...,
         xtype: str = ...,
-        y: Sequence[int] | Sequence[float] | np.ndarray[tuple[int, ...], np.dtype[np.float64]] | pd.Series[float] = ...,
+        y: ArrayLikeNumeric = ...,
         y0: int | float = ...,
         yaxis: str = ...,
         ycalendar: str = ...,
@@ -882,7 +883,7 @@ class Figure(BaseFigure):
         yperiodalignment: str = ...,
         ysrc: str = ...,
         ytype: str = ...,
-        z: Sequence[int] | Sequence[float] | np.ndarray[tuple[int, ...], np.dtype[np.float64]] | pd.Series[float] = ...,
+        z: ArrayLikeNumeric = ...,
         zauto: bool = ...,
         zhoverformat: str = ...,
         zmax: int | float = ...,
@@ -912,7 +913,7 @@ class Figure(BaseFigure):
         colorbar: contourcarpet.ColorBar | dict[str, Any] = ...,
         colorscale: str | list[str] | list[tuple[float, str]] = ...,
         contours: contourcarpet.Contours | dict[str, Any] = ...,
-        customdata: Sequence[float] | np.ndarray[tuple[int, ...], np.dtype[np.float64]] | pd.Series[float] = ...,
+        customdata: ArrayLikeFloat = ...,
         customdatasrc: str = ...,
         da=...,  # pyright: ignore[reportMissingParameterType]
         db=...,  # pyright: ignore[reportMissingParameterType]
@@ -923,7 +924,7 @@ class Figure(BaseFigure):
         | Sequence[float]
         | np.ndarray[tuple[int, ...], np.dtype[np.float64]] = ...,
         hovertextsrc: str = ...,
-        ids: Sequence[str] | np.ndarray[tuple[int, ...], np.dtype[np.str_]] | pd.Series[str] = ...,
+        ids: ArrayLikeString = ...,
         idssrc: str = ...,
         legend: str = ...,
         legendgroup: str | int = ...,
@@ -967,7 +968,7 @@ class Figure(BaseFigure):
         coloraxis: str = ...,
         colorbar: densitymap.ColorBar | dict[str, Any] = ...,
         colorscale: str | list[str] | list[tuple[float, str]] = ...,
-        customdata: Sequence[float] | np.ndarray[tuple[int, ...], np.dtype[np.float64]] | pd.Series[float] = ...,
+        customdata: ArrayLikeFloat = ...,
         customdatasrc: str = ...,
         hoverinfo: str | Sequence[str] = ...,
         hoverinfosrc: str = ...,
@@ -984,7 +985,7 @@ class Figure(BaseFigure):
         | Sequence[float]
         | np.ndarray[tuple[int, ...], np.dtype[np.float64]] = ...,
         hovertextsrc: str = ...,
-        ids: Sequence[str] | np.ndarray[tuple[int, ...], np.dtype[np.str_]] | pd.Series[str] = ...,
+        ids: ArrayLikeString = ...,
         idssrc: str = ...,
         lat=...,  # pyright: ignore[reportMissingParameterType]
         latsrc: str = ...,
@@ -1028,7 +1029,7 @@ class Figure(BaseFigure):
         coloraxis: str = ...,
         colorbar: densitymapbox.ColorBar | dict[str, Any] = ...,
         colorscale: str | list[str] | list[tuple[float, str]] = ...,
-        customdata: Sequence[float] | np.ndarray[tuple[int, ...], np.dtype[np.float64]] | pd.Series[float] = ...,
+        customdata: ArrayLikeFloat = ...,
         customdatasrc: str = ...,
         hoverinfo: str | Sequence[str] = ...,
         hoverinfosrc: str = ...,
@@ -1045,7 +1046,7 @@ class Figure(BaseFigure):
         | Sequence[float]
         | np.ndarray[tuple[int, ...], np.dtype[np.float64]] = ...,
         hovertextsrc: str = ...,
-        ids: Sequence[str] | np.ndarray[tuple[int, ...], np.dtype[np.str_]] | pd.Series[str] = ...,
+        ids: ArrayLikeString = ...,
         idssrc: str = ...,
         lat=...,  # pyright: ignore[reportMissingParameterType]
         latsrc: str = ...,
@@ -1088,7 +1089,7 @@ class Figure(BaseFigure):
         cliponaxis: bool = ...,
         connector=...,  # pyright: ignore[reportMissingParameterType]
         constraintext=...,  # pyright: ignore[reportMissingParameterType]
-        customdata: Sequence[float] | np.ndarray[tuple[int, ...], np.dtype[np.float64]] | pd.Series[float] = ...,
+        customdata: ArrayLikeFloat = ...,
         customdatasrc: str = ...,
         dx: int | float = ...,
         dy: int | float = ...,
@@ -1107,7 +1108,7 @@ class Figure(BaseFigure):
         | Sequence[float]
         | np.ndarray[tuple[int, ...], np.dtype[np.float64]] = ...,
         hovertextsrc: str = ...,
-        ids: Sequence[str] | np.ndarray[tuple[int, ...], np.dtype[np.str_]] | pd.Series[str] = ...,
+        ids: ArrayLikeString = ...,
         idssrc: str = ...,
         insidetextanchor=...,  # pyright: ignore[reportMissingParameterType]
         insidetextfont=...,  # pyright: ignore[reportMissingParameterType]
@@ -1167,7 +1168,7 @@ class Figure(BaseFigure):
         self,
         aspectratio=...,  # pyright: ignore[reportMissingParameterType]
         baseratio=...,  # pyright: ignore[reportMissingParameterType]
-        customdata: Sequence[float] | np.ndarray[tuple[int, ...], np.dtype[np.float64]] | pd.Series[float] = ...,
+        customdata: ArrayLikeFloat = ...,
         customdatasrc: str = ...,
         dlabel=...,  # pyright: ignore[reportMissingParameterType]
         domain=...,  # pyright: ignore[reportMissingParameterType]
@@ -1186,7 +1187,7 @@ class Figure(BaseFigure):
         | Sequence[float]
         | np.ndarray[tuple[int, ...], np.dtype[np.float64]] = ...,
         hovertextsrc: str = ...,
-        ids: Sequence[str] | np.ndarray[tuple[int, ...], np.dtype[np.str_]] | pd.Series[str] = ...,
+        ids: ArrayLikeString = ...,
         idssrc: str = ...,
         insidetextfont=...,  # pyright: ignore[reportMissingParameterType]
         label0=...,  # pyright: ignore[reportMissingParameterType]
@@ -1230,7 +1231,7 @@ class Figure(BaseFigure):
         colorbar: heatmap.ColorBar | dict[str, Any] = ...,
         colorscale: str | list[str] | list[tuple[float, str]] = ...,
         connectgaps: bool = ...,
-        customdata: Sequence[float] | np.ndarray[tuple[int, ...], np.dtype[np.float64]] | pd.Series[float] = ...,
+        customdata: ArrayLikeFloat = ...,
         customdatasrc: str = ...,
         dx: int | float = ...,
         dy: int | float = ...,
@@ -1250,7 +1251,7 @@ class Figure(BaseFigure):
         | Sequence[float]
         | np.ndarray[tuple[int, ...], np.dtype[np.float64]] = ...,
         hovertextsrc: str = ...,
-        ids: Sequence[str] | np.ndarray[tuple[int, ...], np.dtype[np.str_]] | pd.Series[str] = ...,
+        ids: ArrayLikeString = ...,
         idssrc: str = ...,
         legend: str = ...,
         legendgroup: str | int = ...,
@@ -1273,7 +1274,7 @@ class Figure(BaseFigure):
         uid: str | int = ...,
         uirevision: Hashable = ...,
         visible: bool | str = ...,
-        x: Sequence[int] | Sequence[float] | np.ndarray[tuple[int, ...], np.dtype[np.float64]] | pd.Series[float] = ...,
+        x: ArrayLikeNumeric = ...,
         x0: int | float = ...,
         xaxis: str = ...,
         xcalendar: str = ...,
@@ -1284,7 +1285,7 @@ class Figure(BaseFigure):
         xperiodalignment: str = ...,
         xsrc: str = ...,
         xtype: str = ...,
-        y: Sequence[int] | Sequence[float] | np.ndarray[tuple[int, ...], np.dtype[np.float64]] | pd.Series[float] = ...,
+        y: ArrayLikeNumeric = ...,
         y0: int | float = ...,
         yaxis: str = ...,
         ycalendar: str = ...,
@@ -1295,7 +1296,7 @@ class Figure(BaseFigure):
         yperiodalignment: str = ...,
         ysrc: str = ...,
         ytype: str = ...,
-        z: Sequence[int] | Sequence[float] | np.ndarray[tuple[int, ...], np.dtype[np.float64]] | pd.Series[float] = ...,
+        z: ArrayLikeNumeric = ...,
         zauto: bool = ...,
         zhoverformat: str = ...,
         zmax: int | float = ...,
@@ -1318,7 +1319,7 @@ class Figure(BaseFigure):
         cliponaxis: bool = ...,
         constraintext=...,  # pyright: ignore[reportMissingParameterType]
         cumulative=...,  # pyright: ignore[reportMissingParameterType]
-        customdata: Sequence[float] | np.ndarray[tuple[int, ...], np.dtype[np.float64]] | pd.Series[float] = ...,
+        customdata: ArrayLikeFloat = ...,
         customdatasrc: str = ...,
         error_x: histogram.ErrorX | dict[str, Any] = ...,
         error_y: histogram.ErrorY | dict[str, Any] = ...,
@@ -1339,7 +1340,7 @@ class Figure(BaseFigure):
         | Sequence[float]
         | np.ndarray[tuple[int, ...], np.dtype[np.float64]] = ...,
         hovertextsrc: str = ...,
-        ids: Sequence[str] | np.ndarray[tuple[int, ...], np.dtype[np.str_]] | pd.Series[str] = ...,
+        ids: ArrayLikeString = ...,
         idssrc: str = ...,
         insidetextanchor=...,  # pyright: ignore[reportMissingParameterType]
         insidetextfont=...,  # pyright: ignore[reportMissingParameterType]
@@ -1401,7 +1402,7 @@ class Figure(BaseFigure):
         coloraxis: str = ...,
         colorbar: histogram2d.ColorBar | dict[str, Any] = ...,
         colorscale: str | list[str] | list[tuple[float, str]] = ...,
-        customdata: Sequence[float] | np.ndarray[tuple[int, ...], np.dtype[np.float64]] | pd.Series[float] = ...,
+        customdata: ArrayLikeFloat = ...,
         customdatasrc: str = ...,
         histfunc=...,  # pyright: ignore[reportMissingParameterType]
         histnorm=...,  # pyright: ignore[reportMissingParameterType]
@@ -1414,7 +1415,7 @@ class Figure(BaseFigure):
         | Sequence[float]
         | np.ndarray[tuple[int, ...], np.dtype[np.float64]] = ...,
         hovertemplatesrc: str = ...,
-        ids: Sequence[str] | np.ndarray[tuple[int, ...], np.dtype[np.str_]] | pd.Series[str] = ...,
+        ids: ArrayLikeString = ...,
         idssrc: str = ...,
         legend: str = ...,
         legendgroup: str | int = ...,
@@ -1477,7 +1478,7 @@ class Figure(BaseFigure):
         colorbar: histogram2dcontour.ColorBar | dict[str, Any] = ...,
         colorscale: str | list[str] | list[tuple[float, str]] = ...,
         contours: histogram2dcontour.Contours | dict[str, Any] = ...,
-        customdata: Sequence[float] | np.ndarray[tuple[int, ...], np.dtype[np.float64]] | pd.Series[float] = ...,
+        customdata: ArrayLikeFloat = ...,
         customdatasrc: str = ...,
         histfunc=...,  # pyright: ignore[reportMissingParameterType]
         histnorm=...,  # pyright: ignore[reportMissingParameterType]
@@ -1490,7 +1491,7 @@ class Figure(BaseFigure):
         | Sequence[float]
         | np.ndarray[tuple[int, ...], np.dtype[np.float64]] = ...,
         hovertemplatesrc: str = ...,
-        ids: Sequence[str] | np.ndarray[tuple[int, ...], np.dtype[np.str_]] | pd.Series[str] = ...,
+        ids: ArrayLikeString = ...,
         idssrc: str = ...,
         legend: str = ...,
         legendgroup: str | int = ...,
@@ -1545,7 +1546,7 @@ class Figure(BaseFigure):
         self,
         branchvalues=...,  # pyright: ignore[reportMissingParameterType]
         count=...,  # pyright: ignore[reportMissingParameterType]
-        customdata: Sequence[float] | np.ndarray[tuple[int, ...], np.dtype[np.float64]] | pd.Series[float] = ...,
+        customdata: ArrayLikeFloat = ...,
         customdatasrc: str = ...,
         domain=...,  # pyright: ignore[reportMissingParameterType]
         hoverinfo: str | Sequence[str] = ...,
@@ -1563,7 +1564,7 @@ class Figure(BaseFigure):
         | Sequence[float]
         | np.ndarray[tuple[int, ...], np.dtype[np.float64]] = ...,
         hovertextsrc: str = ...,
-        ids: Sequence[str] | np.ndarray[tuple[int, ...], np.dtype[np.str_]] | pd.Series[str] = ...,
+        ids: ArrayLikeString = ...,
         idssrc: str = ...,
         insidetextfont=...,  # pyright: ignore[reportMissingParameterType]
         labels=...,  # pyright: ignore[reportMissingParameterType]
@@ -1607,7 +1608,7 @@ class Figure(BaseFigure):
     def add_image(
         self,
         colormodel=...,  # pyright: ignore[reportMissingParameterType]
-        customdata: Sequence[float] | np.ndarray[tuple[int, ...], np.dtype[np.float64]] | pd.Series[float] = ...,
+        customdata: ArrayLikeFloat = ...,
         customdatasrc: str = ...,
         dx: int | float = ...,
         dy: int | float = ...,
@@ -1626,7 +1627,7 @@ class Figure(BaseFigure):
         | Sequence[float]
         | np.ndarray[tuple[int, ...], np.dtype[np.float64]] = ...,
         hovertextsrc: str = ...,
-        ids: Sequence[str] | np.ndarray[tuple[int, ...], np.dtype[np.str_]] | pd.Series[str] = ...,
+        ids: ArrayLikeString = ...,
         idssrc: str = ...,
         legend: str = ...,
         legendgrouptitle: image.Legendgrouptitle | dict[str, Any] = ...,
@@ -1661,12 +1662,12 @@ class Figure(BaseFigure):
     def add_indicator(
         self,
         align=...,  # pyright: ignore[reportMissingParameterType]
-        customdata: Sequence[float] | np.ndarray[tuple[int, ...], np.dtype[np.float64]] | pd.Series[float] = ...,
+        customdata: ArrayLikeFloat = ...,
         customdatasrc: str = ...,
         delta=...,  # pyright: ignore[reportMissingParameterType]
         domain=...,  # pyright: ignore[reportMissingParameterType]
         gauge=...,  # pyright: ignore[reportMissingParameterType]
-        ids: Sequence[str] | np.ndarray[tuple[int, ...], np.dtype[np.str_]] | pd.Series[str] = ...,
+        ids: ArrayLikeString = ...,
         idssrc: str = ...,
         legend: str = ...,
         legendgrouptitle: indicator.Legendgrouptitle | dict[str, Any] = ...,
@@ -1699,7 +1700,7 @@ class Figure(BaseFigure):
         colorbar: isosurface.ColorBar | dict[str, Any] = ...,
         colorscale: str | list[str] | list[tuple[float, str]] = ...,
         contour=...,  # pyright: ignore[reportMissingParameterType]
-        customdata: Sequence[float] | np.ndarray[tuple[int, ...], np.dtype[np.float64]] | pd.Series[float] = ...,
+        customdata: ArrayLikeFloat = ...,
         customdatasrc: str = ...,
         flatshading=...,  # pyright: ignore[reportMissingParameterType]
         hoverinfo: str | Sequence[str] = ...,
@@ -1717,7 +1718,7 @@ class Figure(BaseFigure):
         | Sequence[float]
         | np.ndarray[tuple[int, ...], np.dtype[np.float64]] = ...,
         hovertextsrc: str = ...,
-        ids: Sequence[str] | np.ndarray[tuple[int, ...], np.dtype[np.str_]] | pd.Series[str] = ...,
+        ids: ArrayLikeString = ...,
         idssrc: str = ...,
         isomax=...,  # pyright: ignore[reportMissingParameterType]
         isomin=...,  # pyright: ignore[reportMissingParameterType]
@@ -1775,7 +1776,7 @@ class Figure(BaseFigure):
         colorbar: mesh3d.ColorBar | dict[str, Any] = ...,
         colorscale: str | list[str] | list[tuple[float, str]] = ...,
         contour=...,  # pyright: ignore[reportMissingParameterType]
-        customdata: Sequence[float] | np.ndarray[tuple[int, ...], np.dtype[np.float64]] | pd.Series[float] = ...,
+        customdata: ArrayLikeFloat = ...,
         customdatasrc: str = ...,
         delaunayaxis=...,  # pyright: ignore[reportMissingParameterType]
         facecolor=...,  # pyright: ignore[reportMissingParameterType]
@@ -1797,7 +1798,7 @@ class Figure(BaseFigure):
         | np.ndarray[tuple[int, ...], np.dtype[np.float64]] = ...,
         hovertextsrc: str = ...,
         i=...,  # pyright: ignore[reportMissingParameterType]
-        ids: Sequence[str] | np.ndarray[tuple[int, ...], np.dtype[np.str_]] | pd.Series[str] = ...,
+        ids: ArrayLikeString = ...,
         idssrc: str = ...,
         intensity=...,  # pyright: ignore[reportMissingParameterType]
         intensitymode=...,  # pyright: ignore[reportMissingParameterType]
@@ -1851,7 +1852,7 @@ class Figure(BaseFigure):
         self,
         close=...,  # pyright: ignore[reportMissingParameterType]
         closesrc: str = ...,
-        customdata: Sequence[float] | np.ndarray[tuple[int, ...], np.dtype[np.float64]] | pd.Series[float] = ...,
+        customdata: ArrayLikeFloat = ...,
         customdatasrc: str = ...,
         decreasing=...,  # pyright: ignore[reportMissingParameterType]
         high=...,  # pyright: ignore[reportMissingParameterType]
@@ -1865,7 +1866,7 @@ class Figure(BaseFigure):
         | Sequence[float]
         | np.ndarray[tuple[int, ...], np.dtype[np.float64]] = ...,
         hovertextsrc: str = ...,
-        ids: Sequence[str] | np.ndarray[tuple[int, ...], np.dtype[np.str_]] | pd.Series[str] = ...,
+        ids: ArrayLikeString = ...,
         idssrc: str = ...,
         increasing=...,  # pyright: ignore[reportMissingParameterType]
         legend: str = ...,
@@ -1942,12 +1943,12 @@ class Figure(BaseFigure):
     ) -> Figure: ...
     def add_parcoords(
         self,
-        customdata: Sequence[float] | np.ndarray[tuple[int, ...], np.dtype[np.float64]] | pd.Series[float] = ...,
+        customdata: ArrayLikeFloat = ...,
         customdatasrc: str = ...,
         dimensions=...,  # pyright: ignore[reportMissingParameterType]
         dimensiondefaults=...,  # pyright: ignore[reportMissingParameterType]
         domain=...,  # pyright: ignore[reportMissingParameterType]
-        ids: Sequence[str] | np.ndarray[tuple[int, ...], np.dtype[np.str_]] | pd.Series[str] = ...,
+        ids: ArrayLikeString = ...,
         idssrc: str = ...,
         labelangle=...,  # pyright: ignore[reportMissingParameterType]
         labelfont=...,  # pyright: ignore[reportMissingParameterType]
@@ -1974,7 +1975,7 @@ class Figure(BaseFigure):
     def add_pie(
         self,
         automargin=...,  # pyright: ignore[reportMissingParameterType]
-        customdata: Sequence[float] | np.ndarray[tuple[int, ...], np.dtype[np.float64]] | pd.Series[float] = ...,
+        customdata: ArrayLikeFloat = ...,
         customdatasrc: str = ...,
         direction=...,  # pyright: ignore[reportMissingParameterType]
         dlabel=...,  # pyright: ignore[reportMissingParameterType]
@@ -1995,7 +1996,7 @@ class Figure(BaseFigure):
         | Sequence[float]
         | np.ndarray[tuple[int, ...], np.dtype[np.float64]] = ...,
         hovertextsrc: str = ...,
-        ids: Sequence[str] | np.ndarray[tuple[int, ...], np.dtype[np.str_]] | pd.Series[str] = ...,
+        ids: ArrayLikeString = ...,
         idssrc: str = ...,
         insidetextfont=...,  # pyright: ignore[reportMissingParameterType]
         insidetextorientation=...,  # pyright: ignore[reportMissingParameterType]
@@ -2041,12 +2042,12 @@ class Figure(BaseFigure):
     def add_sankey(
         self,
         arrangement=...,  # pyright: ignore[reportMissingParameterType]
-        customdata: Sequence[float] | np.ndarray[tuple[int, ...], np.dtype[np.float64]] | pd.Series[float] = ...,
+        customdata: ArrayLikeFloat = ...,
         customdatasrc: str = ...,
         domain=...,  # pyright: ignore[reportMissingParameterType]
         hoverinfo: str | Sequence[str] = ...,
         hoverlabel: sankey.Hoverlabel | dict[str, Any] = ...,
-        ids: Sequence[str] | np.ndarray[tuple[int, ...], np.dtype[np.str_]] | pd.Series[str] = ...,
+        ids: ArrayLikeString = ...,
         idssrc: str = ...,
         legend: str = ...,
         legendgrouptitle: sankey.Legendgrouptitle | dict[str, Any] = ...,
@@ -2075,7 +2076,7 @@ class Figure(BaseFigure):
         alignmentgroup: str | int = ...,
         cliponaxis: bool = ...,
         connectgaps: bool = ...,
-        customdata: Sequence[float] | np.ndarray[tuple[int, ...], np.dtype[np.float64]] | pd.Series[float] = ...,
+        customdata: ArrayLikeFloat = ...,
         customdatasrc: str = ...,
         dx: int | float = ...,
         dy: int | float = ...,
@@ -2102,7 +2103,7 @@ class Figure(BaseFigure):
         | Sequence[float]
         | np.ndarray[tuple[int, ...], np.dtype[np.float64]] = ...,
         hovertextsrc: str = ...,
-        ids: Sequence[str] | np.ndarray[tuple[int, ...], np.dtype[np.str_]] | pd.Series[str] = ...,
+        ids: ArrayLikeString = ...,
         idssrc: str = ...,
         legend: str = ...,
         legendgroup: str | int = ...,
@@ -2137,7 +2138,7 @@ class Figure(BaseFigure):
         unselected: scatter.Unselected
         | dict[str, scatter.unselected.Marker | scatter.unselected.Textfont | dict[str, Any]] = ...,
         visible: bool | str = ...,
-        x: Sequence[Any] | np.ndarray[tuple[int, ...], np.dtype[Any]] | pd.Series[Any] = ...,
+        x: ArrayLike = ...,
         x0: int | float = ...,
         xaxis: str = ...,
         xcalendar: str = ...,
@@ -2146,7 +2147,7 @@ class Figure(BaseFigure):
         xperiod0: int | float | str = ...,
         xperiodalignment: str = ...,
         xsrc: str = ...,
-        y: Sequence[int] | Sequence[float] | np.ndarray[tuple[int, ...], np.dtype[np.float64]] | pd.Series[float] = ...,
+        y: ArrayLikeNumeric = ...,
         y0: int | float = ...,
         yaxis: str = ...,
         ycalendar: str = ...,
@@ -2164,7 +2165,7 @@ class Figure(BaseFigure):
     def add_scatter3d(
         self,
         connectgaps: bool = ...,
-        customdata: Sequence[float] | np.ndarray[tuple[int, ...], np.dtype[np.float64]] | pd.Series[float] = ...,
+        customdata: ArrayLikeFloat = ...,
         customdatasrc: str = ...,
         error_x: scatter3d.ErrorX | dict[str, Any] = ...,
         error_y: scatter3d.ErrorY | dict[str, Any] = ...,
@@ -2184,7 +2185,7 @@ class Figure(BaseFigure):
         | Sequence[float]
         | np.ndarray[tuple[int, ...], np.dtype[np.float64]] = ...,
         hovertextsrc: str = ...,
-        ids: Sequence[str] | np.ndarray[tuple[int, ...], np.dtype[np.str_]] | pd.Series[str] = ...,
+        ids: ArrayLikeString = ...,
         idssrc: str = ...,
         legend: str = ...,
         legendgroup: str | int = ...,
@@ -2203,7 +2204,7 @@ class Figure(BaseFigure):
         showlegend: bool = ...,
         stream: scatter3d.Stream | dict[str, int | str] = ...,
         surfaceaxis=...,  # pyright: ignore[reportMissingParameterType]
-        surfacecolor: Sequence[str] | np.ndarray[tuple[int, ...], np.dtype[np.str_]] | pd.Series[str] = ...,
+        surfacecolor: ArrayLikeString = ...,
         text: str | float | Sequence[str] | Sequence[float] | np.ndarray[tuple[int, ...], np.dtype[np.float64]] = ...,
         textfont: scatter3d.Textfont | dict[str, Any] = ...,
         textposition: str | Sequence[str] | np.ndarray[tuple[int, ...], np.dtype[np.str_]] = ...,
@@ -2238,7 +2239,7 @@ class Figure(BaseFigure):
         bsrc: str = ...,
         carpet=...,  # pyright: ignore[reportMissingParameterType]
         connectgaps: bool = ...,
-        customdata: Sequence[float] | np.ndarray[tuple[int, ...], np.dtype[np.float64]] | pd.Series[float] = ...,
+        customdata: ArrayLikeFloat = ...,
         customdatasrc: str = ...,
         fill: str = ...,
         fillcolor: str = ...,
@@ -2258,7 +2259,7 @@ class Figure(BaseFigure):
         | Sequence[float]
         | np.ndarray[tuple[int, ...], np.dtype[np.float64]] = ...,
         hovertextsrc: str = ...,
-        ids: Sequence[str] | np.ndarray[tuple[int, ...], np.dtype[np.str_]] | pd.Series[str] = ...,
+        ids: ArrayLikeString = ...,
         idssrc: str = ...,
         legend: str = ...,
         legendgroup: str | int = ...,
@@ -2300,7 +2301,7 @@ class Figure(BaseFigure):
     def add_scattergeo(
         self,
         connectgaps: bool = ...,
-        customdata: Sequence[float] | np.ndarray[tuple[int, ...], np.dtype[np.float64]] | pd.Series[float] = ...,
+        customdata: ArrayLikeFloat = ...,
         customdatasrc: str = ...,
         featureidkey=...,  # pyright: ignore[reportMissingParameterType]
         fill: str = ...,
@@ -2322,7 +2323,7 @@ class Figure(BaseFigure):
         | Sequence[float]
         | np.ndarray[tuple[int, ...], np.dtype[np.float64]] = ...,
         hovertextsrc: str = ...,
-        ids: Sequence[str] | np.ndarray[tuple[int, ...], np.dtype[np.str_]] | pd.Series[str] = ...,
+        ids: ArrayLikeString = ...,
         idssrc: str = ...,
         lat=...,  # pyright: ignore[reportMissingParameterType]
         latsrc: str = ...,
@@ -2367,7 +2368,7 @@ class Figure(BaseFigure):
     def add_scattergl(
         self,
         connectgaps: bool = ...,
-        customdata: Sequence[float] | np.ndarray[tuple[int, ...], np.dtype[np.float64]] | pd.Series[float] = ...,
+        customdata: ArrayLikeFloat = ...,
         customdatasrc: str = ...,
         dx: int | float = ...,
         dy: int | float = ...,
@@ -2390,7 +2391,7 @@ class Figure(BaseFigure):
         | Sequence[float]
         | np.ndarray[tuple[int, ...], np.dtype[np.float64]] = ...,
         hovertextsrc: str = ...,
-        ids: Sequence[str] | np.ndarray[tuple[int, ...], np.dtype[np.str_]] | pd.Series[str] = ...,
+        ids: ArrayLikeString = ...,
         idssrc: str = ...,
         legend: str = ...,
         legendgroup: str | int = ...,
@@ -2449,7 +2450,7 @@ class Figure(BaseFigure):
         below=...,  # pyright: ignore[reportMissingParameterType]
         cluster=...,  # pyright: ignore[reportMissingParameterType]
         connectgaps: bool = ...,
-        customdata: Sequence[float] | np.ndarray[tuple[int, ...], np.dtype[np.float64]] | pd.Series[float] = ...,
+        customdata: ArrayLikeFloat = ...,
         customdatasrc: str = ...,
         fill: str = ...,
         fillcolor: str = ...,
@@ -2468,7 +2469,7 @@ class Figure(BaseFigure):
         | Sequence[float]
         | np.ndarray[tuple[int, ...], np.dtype[np.float64]] = ...,
         hovertextsrc: str = ...,
-        ids: Sequence[str] | np.ndarray[tuple[int, ...], np.dtype[np.str_]] | pd.Series[str] = ...,
+        ids: ArrayLikeString = ...,
         idssrc: str = ...,
         lat=...,  # pyright: ignore[reportMissingParameterType]
         latsrc: str = ...,
@@ -2510,7 +2511,7 @@ class Figure(BaseFigure):
         below=...,  # pyright: ignore[reportMissingParameterType]
         cluster=...,  # pyright: ignore[reportMissingParameterType]
         connectgaps: bool = ...,
-        customdata: Sequence[float] | np.ndarray[tuple[int, ...], np.dtype[np.float64]] | pd.Series[float] = ...,
+        customdata: ArrayLikeFloat = ...,
         customdatasrc: str = ...,
         fill: str = ...,
         fillcolor: str = ...,
@@ -2529,7 +2530,7 @@ class Figure(BaseFigure):
         | Sequence[float]
         | np.ndarray[tuple[int, ...], np.dtype[np.float64]] = ...,
         hovertextsrc: str = ...,
-        ids: Sequence[str] | np.ndarray[tuple[int, ...], np.dtype[np.str_]] | pd.Series[str] = ...,
+        ids: ArrayLikeString = ...,
         idssrc: str = ...,
         lat=...,  # pyright: ignore[reportMissingParameterType]
         latsrc: str = ...,
@@ -2570,7 +2571,7 @@ class Figure(BaseFigure):
         self,
         cliponaxis: bool = ...,
         connectgaps: bool = ...,
-        customdata: Sequence[float] | np.ndarray[tuple[int, ...], np.dtype[np.float64]] | pd.Series[float] = ...,
+        customdata: ArrayLikeFloat = ...,
         customdatasrc: str = ...,
         dr=...,  # pyright: ignore[reportMissingParameterType]
         dtheta=...,  # pyright: ignore[reportMissingParameterType]
@@ -2592,7 +2593,7 @@ class Figure(BaseFigure):
         | Sequence[float]
         | np.ndarray[tuple[int, ...], np.dtype[np.float64]] = ...,
         hovertextsrc: str = ...,
-        ids: Sequence[str] | np.ndarray[tuple[int, ...], np.dtype[np.str_]] | pd.Series[str] = ...,
+        ids: ArrayLikeString = ...,
         idssrc: str = ...,
         legend: str = ...,
         legendgroup: str | int = ...,
@@ -2638,7 +2639,7 @@ class Figure(BaseFigure):
     def add_scatterpolargl(
         self,
         connectgaps: bool = ...,
-        customdata: Sequence[float] | np.ndarray[tuple[int, ...], np.dtype[np.float64]] | pd.Series[float] = ...,
+        customdata: ArrayLikeFloat = ...,
         customdatasrc: str = ...,
         dr=...,  # pyright: ignore[reportMissingParameterType]
         dtheta=...,  # pyright: ignore[reportMissingParameterType]
@@ -2659,7 +2660,7 @@ class Figure(BaseFigure):
         | Sequence[float]
         | np.ndarray[tuple[int, ...], np.dtype[np.float64]] = ...,
         hovertextsrc: str = ...,
-        ids: Sequence[str] | np.ndarray[tuple[int, ...], np.dtype[np.str_]] | pd.Series[str] = ...,
+        ids: ArrayLikeString = ...,
         idssrc: str = ...,
         legend: str = ...,
         legendgroup: str | int = ...,
@@ -2706,7 +2707,7 @@ class Figure(BaseFigure):
         self,
         cliponaxis: bool = ...,
         connectgaps: bool = ...,
-        customdata: Sequence[float] | np.ndarray[tuple[int, ...], np.dtype[np.float64]] | pd.Series[float] = ...,
+        customdata: ArrayLikeFloat = ...,
         customdatasrc: str = ...,
         fill: str = ...,
         fillcolor: str = ...,
@@ -2726,7 +2727,7 @@ class Figure(BaseFigure):
         | Sequence[float]
         | np.ndarray[tuple[int, ...], np.dtype[np.float64]] = ...,
         hovertextsrc: str = ...,
-        ids: Sequence[str] | np.ndarray[tuple[int, ...], np.dtype[np.str_]] | pd.Series[str] = ...,
+        ids: ArrayLikeString = ...,
         idssrc: str = ...,
         imag=...,  # pyright: ignore[reportMissingParameterType]
         imagsrc: str = ...,
@@ -2776,7 +2777,7 @@ class Figure(BaseFigure):
         cliponaxis: bool = ...,
         connectgaps: bool = ...,
         csrc: str = ...,
-        customdata: Sequence[float] | np.ndarray[tuple[int, ...], np.dtype[np.float64]] | pd.Series[float] = ...,
+        customdata: ArrayLikeFloat = ...,
         customdatasrc: str = ...,
         fill: str = ...,
         fillcolor: str = ...,
@@ -2796,7 +2797,7 @@ class Figure(BaseFigure):
         | Sequence[float]
         | np.ndarray[tuple[int, ...], np.dtype[np.float64]] = ...,
         hovertextsrc: str = ...,
-        ids: Sequence[str] | np.ndarray[tuple[int, ...], np.dtype[np.str_]] | pd.Series[str] = ...,
+        ids: ArrayLikeString = ...,
         idssrc: str = ...,
         legend: str = ...,
         legendgroup: str | int = ...,
@@ -2835,7 +2836,7 @@ class Figure(BaseFigure):
     ) -> Figure: ...
     def add_splom(
         self,
-        customdata: Sequence[float] | np.ndarray[tuple[int, ...], np.dtype[np.float64]] | pd.Series[float] = ...,
+        customdata: ArrayLikeFloat = ...,
         customdatasrc: str = ...,
         diagonal=...,  # pyright: ignore[reportMissingParameterType]
         dimensions=...,  # pyright: ignore[reportMissingParameterType]
@@ -2855,7 +2856,7 @@ class Figure(BaseFigure):
         | Sequence[float]
         | np.ndarray[tuple[int, ...], np.dtype[np.float64]] = ...,
         hovertextsrc: str = ...,
-        ids: Sequence[str] | np.ndarray[tuple[int, ...], np.dtype[np.str_]] | pd.Series[str] = ...,
+        ids: ArrayLikeString = ...,
         idssrc: str = ...,
         legend: str = ...,
         legendgroup: str | int = ...,
@@ -2897,7 +2898,7 @@ class Figure(BaseFigure):
         coloraxis: str = ...,
         colorbar: streamtube.ColorBar | dict[str, Any] = ...,
         colorscale: str | list[str] | list[tuple[float, str]] = ...,
-        customdata: Sequence[float] | np.ndarray[tuple[int, ...], np.dtype[np.float64]] | pd.Series[float] = ...,
+        customdata: ArrayLikeFloat = ...,
         customdatasrc: str = ...,
         hoverinfo: str | Sequence[str] = ...,
         hoverinfosrc: str = ...,
@@ -2913,7 +2914,7 @@ class Figure(BaseFigure):
         | Sequence[str]
         | Sequence[float]
         | np.ndarray[tuple[int, ...], np.dtype[np.float64]] = ...,
-        ids: Sequence[str] | np.ndarray[tuple[int, ...], np.dtype[np.str_]] | pd.Series[str] = ...,
+        ids: ArrayLikeString = ...,
         idssrc: str = ...,
         legend: str = ...,
         legendgroup: str | int = ...,
@@ -2965,7 +2966,7 @@ class Figure(BaseFigure):
         self,
         branchvalues=...,  # pyright: ignore[reportMissingParameterType]
         count=...,  # pyright: ignore[reportMissingParameterType]
-        customdata: Sequence[float] | np.ndarray[tuple[int, ...], np.dtype[np.float64]] | pd.Series[float] = ...,
+        customdata: ArrayLikeFloat = ...,
         customdatasrc: str = ...,
         domain=...,  # pyright: ignore[reportMissingParameterType]
         hoverinfo: str | Sequence[str] = ...,
@@ -2983,7 +2984,7 @@ class Figure(BaseFigure):
         | Sequence[float]
         | np.ndarray[tuple[int, ...], np.dtype[np.float64]] = ...,
         hovertextsrc: str = ...,
-        ids: Sequence[str] | np.ndarray[tuple[int, ...], np.dtype[np.str_]] | pd.Series[str] = ...,
+        ids: ArrayLikeString = ...,
         idssrc: str = ...,
         insidetextfont=...,  # pyright: ignore[reportMissingParameterType]
         insidetextorientation=...,  # pyright: ignore[reportMissingParameterType]
@@ -3035,7 +3036,7 @@ class Figure(BaseFigure):
         colorscale: str | list[str] | list[tuple[float, str]] = ...,
         connectgaps: bool = ...,
         contours: surface.Contours | dict[str, Any] = ...,
-        customdata: Sequence[float] | np.ndarray[tuple[int, ...], np.dtype[np.float64]] | pd.Series[float] = ...,
+        customdata: ArrayLikeFloat = ...,
         customdatasrc: str = ...,
         hidesurface: bool = ...,
         hoverinfo: str | Sequence[str] = ...,
@@ -3053,7 +3054,7 @@ class Figure(BaseFigure):
         | Sequence[float]
         | np.ndarray[tuple[int, ...], np.dtype[np.float64]] = ...,
         hovertextsrc: str = ...,
-        ids: Sequence[str] | np.ndarray[tuple[int, ...], np.dtype[np.str_]] | pd.Series[str] = ...,
+        ids: ArrayLikeString = ...,
         idssrc: str = ...,
         legend: str = ...,
         legendgroup: str | int = ...,
@@ -3073,22 +3074,22 @@ class Figure(BaseFigure):
         showlegend: bool = ...,
         showscale: bool = ...,
         stream: surface.Stream | dict[str, int | str] = ...,
-        surfacecolor: Sequence[str] | np.ndarray[tuple[int, ...], np.dtype[np.str_]] | pd.Series[str] = ...,
+        surfacecolor: ArrayLikeString = ...,
         surfacecolorsrc: str = ...,
         text: str | float | Sequence[str] | Sequence[float] | np.ndarray[tuple[int, ...], np.dtype[np.float64]] = ...,
         textsrc: str = ...,
         uid: str | int = ...,
         uirevision: Hashable = ...,
         visible: bool | str = ...,
-        x: Sequence[int] | Sequence[float] | np.ndarray[tuple[int, ...], np.dtype[np.float64]] | pd.Series[float] = ...,
+        x: ArrayLikeNumeric = ...,
         xcalendar: str = ...,
         xhoverformat: str = ...,
         xsrc: str = ...,
-        y: Sequence[int] | Sequence[float] | np.ndarray[tuple[int, ...], np.dtype[np.float64]] | pd.Series[float] = ...,
+        y: ArrayLikeNumeric = ...,
         ycalendar: str = ...,
         yhoverformat: str = ...,
         ysrc: str = ...,
-        z: Sequence[int] | Sequence[float] | np.ndarray[tuple[int, ...], np.dtype[np.float64]] | pd.Series[float] = ...,
+        z: ArrayLikeNumeric = ...,
         zcalendar: str = ...,
         zhoverformat: str = ...,
         zsrc: str = ...,
@@ -3103,14 +3104,14 @@ class Figure(BaseFigure):
         columnordersrc: str = ...,
         columnwidth=...,  # pyright: ignore[reportMissingParameterType]
         columnwidthsrc: str = ...,
-        customdata: Sequence[float] | np.ndarray[tuple[int, ...], np.dtype[np.float64]] | pd.Series[float] = ...,
+        customdata: ArrayLikeFloat = ...,
         customdatasrc: str = ...,
         domain=...,  # pyright: ignore[reportMissingParameterType]
         header=...,  # pyright: ignore[reportMissingParameterType]
         hoverinfo: str | Sequence[str] = ...,
         hoverinfosrc: str = ...,
         hoverlabel: table.Hoverlabel | dict[str, Any] = ...,
-        ids: Sequence[str] | np.ndarray[tuple[int, ...], np.dtype[np.str_]] | pd.Series[str] = ...,
+        ids: ArrayLikeString = ...,
         idssrc: str = ...,
         legend: str = ...,
         legendgrouptitle: table.Legendgrouptitle | dict[str, Any] = ...,
@@ -3131,7 +3132,7 @@ class Figure(BaseFigure):
         self,
         branchvalues=...,  # pyright: ignore[reportMissingParameterType]
         count=...,  # pyright: ignore[reportMissingParameterType]
-        customdata: Sequence[float] | np.ndarray[tuple[int, ...], np.dtype[np.float64]] | pd.Series[float] = ...,
+        customdata: ArrayLikeFloat = ...,
         customdatasrc: str = ...,
         domain=...,  # pyright: ignore[reportMissingParameterType]
         hoverinfo: str | Sequence[str] = ...,
@@ -3149,7 +3150,7 @@ class Figure(BaseFigure):
         | Sequence[float]
         | np.ndarray[tuple[int, ...], np.dtype[np.float64]] = ...,
         hovertextsrc: str = ...,
-        ids: Sequence[str] | np.ndarray[tuple[int, ...], np.dtype[np.str_]] | pd.Series[str] = ...,
+        ids: ArrayLikeString = ...,
         idssrc: str = ...,
         insidetextfont=...,  # pyright: ignore[reportMissingParameterType]
         labels=...,  # pyright: ignore[reportMissingParameterType]
@@ -3194,7 +3195,7 @@ class Figure(BaseFigure):
         alignmentgroup: str | int = ...,
         bandwidth=...,  # pyright: ignore[reportMissingParameterType]
         box=...,  # pyright: ignore[reportMissingParameterType]
-        customdata: Sequence[float] | np.ndarray[tuple[int, ...], np.dtype[np.float64]] | pd.Series[float] = ...,
+        customdata: ArrayLikeFloat = ...,
         customdatasrc: str = ...,
         fillcolor: str = ...,
         hoverinfo: str | Sequence[str] = ...,
@@ -3213,7 +3214,7 @@ class Figure(BaseFigure):
         | Sequence[float]
         | np.ndarray[tuple[int, ...], np.dtype[np.float64]] = ...,
         hovertextsrc: str = ...,
-        ids: Sequence[str] | np.ndarray[tuple[int, ...], np.dtype[np.str_]] | pd.Series[str] = ...,
+        ids: ArrayLikeString = ...,
         idssrc: str = ...,
         jitter=...,  # pyright: ignore[reportMissingParameterType]
         legend: str = ...,
@@ -3277,7 +3278,7 @@ class Figure(BaseFigure):
         colorbar: volume.ColorBar | dict[str, Any] = ...,
         colorscale: str | list[str] | list[tuple[float, str]] = ...,
         contour=...,  # pyright: ignore[reportMissingParameterType]
-        customdata: Sequence[float] | np.ndarray[tuple[int, ...], np.dtype[np.float64]] | pd.Series[float] = ...,
+        customdata: ArrayLikeFloat = ...,
         customdatasrc: str = ...,
         flatshading=...,  # pyright: ignore[reportMissingParameterType]
         hoverinfo: str | Sequence[str] = ...,
@@ -3295,7 +3296,7 @@ class Figure(BaseFigure):
         | Sequence[float]
         | np.ndarray[tuple[int, ...], np.dtype[np.float64]] = ...,
         hovertextsrc: str = ...,
-        ids: Sequence[str] | np.ndarray[tuple[int, ...], np.dtype[np.str_]] | pd.Series[str] = ...,
+        ids: ArrayLikeString = ...,
         idssrc: str = ...,
         isomax=...,  # pyright: ignore[reportMissingParameterType]
         isomin=...,  # pyright: ignore[reportMissingParameterType]
@@ -3348,7 +3349,7 @@ class Figure(BaseFigure):
         cliponaxis: bool = ...,
         connector=...,  # pyright: ignore[reportMissingParameterType]
         constraintext=...,  # pyright: ignore[reportMissingParameterType]
-        customdata: Sequence[float] | np.ndarray[tuple[int, ...], np.dtype[np.float64]] | pd.Series[float] = ...,
+        customdata: ArrayLikeFloat = ...,
         customdatasrc: str = ...,
         decreasing=...,  # pyright: ignore[reportMissingParameterType]
         dx: int | float = ...,
@@ -3368,7 +3369,7 @@ class Figure(BaseFigure):
         | Sequence[float]
         | np.ndarray[tuple[int, ...], np.dtype[np.float64]] = ...,
         hovertextsrc: str = ...,
-        ids: Sequence[str] | np.ndarray[tuple[int, ...], np.dtype[np.str_]] | pd.Series[str] = ...,
+        ids: ArrayLikeString = ...,
         idssrc: str = ...,
         increasing=...,  # pyright: ignore[reportMissingParameterType]
         insidetextanchor=...,  # pyright: ignore[reportMissingParameterType]

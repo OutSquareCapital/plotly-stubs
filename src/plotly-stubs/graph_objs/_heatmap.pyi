@@ -4,6 +4,7 @@ from typing import Any
 
 import numpy as np
 import pandas as pd
+from plotly._stubs_helpers import ArrayLikeFloat, ArrayLikeNumeric, ArrayLikeString
 from plotly.basedatatypes import BaseTraceType as _BaseTraceType
 from plotly.graph_objs.heatmap import (
     ColorBar,
@@ -38,11 +39,9 @@ class Heatmap(_BaseTraceType):
     @connectgaps.setter
     def connectgaps(self, val: bool | None) -> None: ...
     @property
-    def customdata(self) -> Sequence[float] | np.ndarray[tuple[int, ...], np.dtype[np.float64]] | pd.Series[float]: ...
+    def customdata(self) -> ArrayLikeFloat: ...
     @customdata.setter
-    def customdata(
-        self, val: Sequence[float] | np.ndarray[tuple[int, ...], np.dtype[np.float64]] | pd.Series[float]
-    ) -> None: ...
+    def customdata(self, val: ArrayLikeFloat) -> None: ...
     @property
     def customdatasrc(self) -> str | None: ...
     @customdatasrc.setter
@@ -94,7 +93,7 @@ class Heatmap(_BaseTraceType):
     @property
     def ids(self) -> Sequence[str]: ...
     @ids.setter
-    def ids(self, val: Sequence[str] | np.ndarray[tuple[int, ...], np.dtype[np.str_]] | pd.Series[str]) -> None: ...
+    def ids(self, val: ArrayLikeString) -> None: ...
     @property
     def idssrc(self) -> str | None: ...
     @idssrc.setter
@@ -188,11 +187,11 @@ class Heatmap(_BaseTraceType):
     @property
     def x(
         self,
-    ) -> Sequence[int] | Sequence[float] | np.ndarray[tuple[int, ...], np.dtype[np.float64]] | pd.Series[float]: ...
+    ) -> ArrayLikeNumeric: ...
     @x.setter
     def x(
         self,
-        val: Sequence[int] | Sequence[float] | np.ndarray[tuple[int, ...], np.dtype[np.float64]] | pd.Series[float],
+        val: ArrayLikeNumeric,
     ) -> None: ...
     @property
     def x0(self) -> int | float | None: ...
@@ -237,11 +236,11 @@ class Heatmap(_BaseTraceType):
     @property
     def y(
         self,
-    ) -> Sequence[int] | Sequence[float] | np.ndarray[tuple[int, ...], np.dtype[np.float64]] | pd.Series[float]: ...
+    ) -> ArrayLikeNumeric: ...
     @y.setter
     def y(
         self,
-        val: Sequence[int] | Sequence[float] | np.ndarray[tuple[int, ...], np.dtype[np.float64]] | pd.Series[float],
+        val: ArrayLikeNumeric,
     ) -> None: ...
     @property
     def y0(self) -> int | float | None: ...
@@ -286,11 +285,11 @@ class Heatmap(_BaseTraceType):
     @property
     def z(
         self,
-    ) -> Sequence[int] | Sequence[float] | np.ndarray[tuple[int, ...], np.dtype[np.float64]] | pd.Series[float]: ...
+    ) -> ArrayLikeNumeric: ...
     @z.setter
     def z(
         self,
-        val: Sequence[int] | Sequence[float] | np.ndarray[tuple[int, ...], np.dtype[np.float64]] | pd.Series[float],
+        val: ArrayLikeNumeric,
     ) -> None: ...
     @property
     def zauto(self) -> bool | None: ...
@@ -334,7 +333,7 @@ class Heatmap(_BaseTraceType):
         colorbar: ColorBar | dict[str, Any] | None = ...,
         colorscale: str | list[str] | list[tuple[float, str]] | None = ...,
         connectgaps: bool | None = ...,
-        customdata: Sequence[float] | np.ndarray[tuple[int, ...], np.dtype[np.float64]] | pd.Series[float] | None = ...,
+        customdata: ArrayLikeFloat | None = ...,
         customdatasrc: str | None = ...,
         dx: int | float | None = ...,
         dy: int | float | None = ...,
@@ -356,7 +355,7 @@ class Heatmap(_BaseTraceType):
         | np.ndarray[tuple[int, ...], np.dtype[np.float64]]
         | None = ...,
         hovertextsrc: str | None = ...,
-        ids: Sequence[str] | np.ndarray[tuple[int, ...], np.dtype[np.str_]] | pd.Series[str] | None = ...,
+        ids: ArrayLikeString | None = ...,
         idssrc: str | None = ...,
         legend: str | None = ...,
         legendgroup: str | int | None = ...,

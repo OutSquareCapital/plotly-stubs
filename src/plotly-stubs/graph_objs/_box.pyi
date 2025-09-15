@@ -6,6 +6,7 @@ import numpy as np
 import pandas as pd
 import plotly.graph_objs.box.selected as _selected
 import plotly.graph_objs.box.unselected as _unselected
+from plotly._stubs_helpers import ArrayLikeFloat, ArrayLikeNumeric, ArrayLikeString
 from plotly.basedatatypes import BaseTraceType as _BaseTraceType
 from plotly.graph_objs.box import (
     Hoverlabel,
@@ -34,11 +35,9 @@ class Box(_BaseTraceType):
     @boxpoints.setter
     def boxpoints(self, val: bool | str | None) -> None: ...
     @property
-    def customdata(self) -> Sequence[float] | np.ndarray[tuple[int, ...], np.dtype[np.float64]] | pd.Series[float]: ...
+    def customdata(self) -> ArrayLikeFloat: ...
     @customdata.setter
-    def customdata(
-        self, val: Sequence[float] | np.ndarray[tuple[int, ...], np.dtype[np.float64]] | pd.Series[float]
-    ) -> None: ...
+    def customdata(self, val: ArrayLikeFloat) -> None: ...
     @property
     def customdatasrc(self) -> str | None: ...
     @customdatasrc.setter
@@ -94,7 +93,7 @@ class Box(_BaseTraceType):
     @property
     def ids(self) -> Sequence[str]: ...
     @ids.setter
-    def ids(self, val: Sequence[str] | np.ndarray[tuple[int, ...], np.dtype[np.str_]] | pd.Series[str]) -> None: ...
+    def ids(self, val: ArrayLikeString) -> None: ...
     @property
     def idssrc(self) -> str | None: ...
     @idssrc.setter
@@ -132,7 +131,7 @@ class Box(_BaseTraceType):
     @lowerfence.setter
     def lowerfence(
         self,
-        val: Sequence[int] | Sequence[float] | np.ndarray[tuple[int, ...], np.dtype[np.float64]] | pd.Series[float],
+        val: ArrayLikeNumeric,
     ) -> None: ...
     @property
     def lowerfencesrc(self) -> str | None: ...
@@ -145,9 +144,7 @@ class Box(_BaseTraceType):
     @property
     def mean(self) -> Sequence[float]: ...
     @mean.setter
-    def mean(
-        self, val: Sequence[float] | np.ndarray[tuple[int, ...], np.dtype[np.float64]] | pd.Series[float]
-    ) -> None: ...
+    def mean(self, val: ArrayLikeFloat) -> None: ...
     @property
     def meansrc(self) -> str | None: ...
     @meansrc.setter
@@ -155,9 +152,7 @@ class Box(_BaseTraceType):
     @property
     def median(self) -> Sequence[float]: ...
     @median.setter
-    def median(
-        self, val: Sequence[float] | np.ndarray[tuple[int, ...], np.dtype[np.float64]] | pd.Series[float]
-    ) -> None: ...
+    def median(self, val: ArrayLikeFloat) -> None: ...
     @property
     def mediansrc(self) -> str | None: ...
     @mediansrc.setter
@@ -181,9 +176,7 @@ class Box(_BaseTraceType):
     @property
     def notchspan(self) -> Sequence[float]: ...
     @notchspan.setter
-    def notchspan(
-        self, val: Sequence[float] | np.ndarray[tuple[int, ...], np.dtype[np.float64]] | pd.Series[float]
-    ) -> None: ...
+    def notchspan(self, val: ArrayLikeFloat) -> None: ...
     @property
     def notchspansrc(self) -> str | None: ...
     @notchspansrc.setter
@@ -211,9 +204,7 @@ class Box(_BaseTraceType):
     @property
     def q1(self) -> Sequence[float]: ...
     @q1.setter
-    def q1(
-        self, val: Sequence[float] | np.ndarray[tuple[int, ...], np.dtype[np.float64]] | pd.Series[float]
-    ) -> None: ...
+    def q1(self, val: ArrayLikeFloat) -> None: ...
     @property
     def q1src(self) -> str | None: ...
     @q1src.setter
@@ -221,9 +212,7 @@ class Box(_BaseTraceType):
     @property
     def q3(self) -> Sequence[float]: ...
     @q3.setter
-    def q3(
-        self, val: Sequence[float] | np.ndarray[tuple[int, ...], np.dtype[np.float64]] | pd.Series[float]
-    ) -> None: ...
+    def q3(self, val: ArrayLikeFloat) -> None: ...
     @property
     def q3src(self) -> str | None: ...
     @q3src.setter
@@ -235,9 +224,7 @@ class Box(_BaseTraceType):
     @property
     def sd(self) -> Sequence[float]: ...
     @sd.setter
-    def sd(
-        self, val: Sequence[float] | np.ndarray[tuple[int, ...], np.dtype[np.float64]] | pd.Series[float]
-    ) -> None: ...
+    def sd(self, val: ArrayLikeFloat) -> None: ...
     @property
     def sdmultiple(self) -> int | float | None: ...
     @sdmultiple.setter
@@ -297,7 +284,7 @@ class Box(_BaseTraceType):
     @upperfence.setter
     def upperfence(
         self,
-        val: Sequence[int] | Sequence[float] | np.ndarray[tuple[int, ...], np.dtype[np.float64]] | pd.Series[float],
+        val: ArrayLikeNumeric,
     ) -> None: ...
     @property
     def upperfencesrc(self) -> str | None: ...
@@ -318,11 +305,11 @@ class Box(_BaseTraceType):
     @property
     def x(
         self,
-    ) -> Sequence[int] | Sequence[float] | np.ndarray[tuple[int, ...], np.dtype[np.float64]] | pd.Series[float]: ...
+    ) -> ArrayLikeNumeric: ...
     @x.setter
     def x(
         self,
-        val: Sequence[int] | Sequence[float] | np.ndarray[tuple[int, ...], np.dtype[np.float64]] | pd.Series[float],
+        val: ArrayLikeNumeric,
     ) -> None: ...
     @property
     def x0(self) -> int | float | None: ...
@@ -359,11 +346,11 @@ class Box(_BaseTraceType):
     @property
     def y(
         self,
-    ) -> Sequence[int] | Sequence[float] | np.ndarray[tuple[int, ...], np.dtype[np.float64]] | pd.Series[float]: ...
+    ) -> ArrayLikeNumeric: ...
     @y.setter
     def y(
         self,
-        val: Sequence[int] | Sequence[float] | np.ndarray[tuple[int, ...], np.dtype[np.float64]] | pd.Series[float],
+        val: ArrayLikeNumeric,
     ) -> None: ...
     @property
     def y0(self) -> int | float | None: ...
@@ -409,7 +396,7 @@ class Box(_BaseTraceType):
         alignmentgroup: str | None = ...,
         boxmean: bool | str | None = ...,
         boxpoints: bool | str | None = ...,
-        customdata: Sequence[float] | np.ndarray[tuple[int, ...], np.dtype[np.float64]] | pd.Series[float] | None = ...,
+        customdata: ArrayLikeFloat | None = ...,
         customdatasrc: str | None = ...,
         dx: int | float | None = ...,
         dy: int | float | None = ...,
@@ -432,7 +419,7 @@ class Box(_BaseTraceType):
         | np.ndarray[tuple[int, ...], np.dtype[np.float64]]
         | None = ...,
         hovertextsrc: str | None = ...,
-        ids: Sequence[str] | np.ndarray[tuple[int, ...], np.dtype[np.str_]] | pd.Series[str] | None = ...,
+        ids: ArrayLikeString | None = ...,
         idssrc: str | None = ...,
         jitter: int | float | None = ...,
         legend: str | None = ...,
@@ -448,27 +435,27 @@ class Box(_BaseTraceType):
         | None = ...,
         lowerfencesrc: str | None = ...,
         marker: Marker | dict[str, Any] | None = ...,
-        mean: Sequence[float] | np.ndarray[tuple[int, ...], np.dtype[np.float64]] | pd.Series[float] | None = ...,
+        mean: ArrayLikeFloat | None = ...,
         meansrc: str | None = ...,
-        median: Sequence[float] | np.ndarray[tuple[int, ...], np.dtype[np.float64]] | pd.Series[float] | None = ...,
+        median: ArrayLikeFloat | None = ...,
         mediansrc: str | None = ...,
         meta: Sequence[Any] | dict[str, Any] | np.ndarray[tuple[int, ...], Any] | None = ...,
         metasrc: str | None = ...,
         name: str | int | None = ...,
         notched: bool | None = ...,
-        notchspan: Sequence[float] | np.ndarray[tuple[int, ...], np.dtype[np.float64]] | pd.Series[float] | None = ...,
+        notchspan: ArrayLikeFloat | None = ...,
         notchspansrc: str | None = ...,
         notchwidth: int | float | None = ...,
         offsetgroup: str | int | None = ...,
         opacity: int | float | None = ...,
         orientation: str | None = ...,
         pointpos: int | float | None = ...,
-        q1: Sequence[float] | np.ndarray[tuple[int, ...], np.dtype[np.float64]] | pd.Series[float] | None = ...,
+        q1: ArrayLikeFloat | None = ...,
         q1src: str | None = ...,
-        q3: Sequence[float] | np.ndarray[tuple[int, ...], np.dtype[np.float64]] | pd.Series[float] | None = ...,
+        q3: ArrayLikeFloat | None = ...,
         q3src: str | None = ...,
         quartilemethod: str | None = ...,
-        sd: Sequence[float] | np.ndarray[tuple[int, ...], np.dtype[np.float64]] | pd.Series[float] | None = ...,
+        sd: ArrayLikeFloat | None = ...,
         sdmultiple: int | float | None = ...,
         sdsrc: str | None = ...,
         selected: Selected | dict[str, _selected.Marker | dict[str, Any]] | None = ...,
