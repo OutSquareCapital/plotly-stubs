@@ -8,14 +8,27 @@ _T_co = TypeVar("_T_co", covariant=True)
 _S_co = TypeVar("_S_co", bound=tuple[Any, ...], covariant=True)
 _D_co = TypeVar("_D_co", covariant=True)
 
-class MapCenter(TypedDict):
-    lat: int | float
-    lon: int | float
-
 class NPTypeLike(Protocol, Generic[_T_co]): ...
 
 class NPArrayLike(Protocol, Generic[_S_co, _D_co]):
     def __iter__(self) -> Iterator[_D_co]: ...
+    def __array__(self, *args: Any, **kwargs: Any) -> Any: ...
+    def __array_finalize__(self, *args: Any, **kwargs: Any) -> None: ...
+    def __array_wrap__(self, *args: Any, **kwargs: Any) -> Any: ...
+    def __getitem__(self, *args: Any, **kwargs: Any) -> Any: ...
+    def __setitem__(self, *args: Any, **kwargs: Any) -> None: ...
+    @property
+    def shape(self) -> _S_co: ...
+    @property
+    def dtype(self) -> Any: ...
+    @property
+    def ndim(self) -> int: ...
+    @property
+    def size(self) -> int: ...
+
+class MapCenter(TypedDict):
+    lat: int | float
+    lon: int | float
 
 class DataFrameCompatible(Protocol):
     # More details at https://data-apis.org/dataframe-protocol/latest/index.html
@@ -23,7 +36,7 @@ class DataFrameCompatible(Protocol):
 
 ArrayLike: TypeAlias = Sequence[Any] | pd.Series | pl.Series | NPArrayLike[tuple[Any, ...], Any] | pd.Index
 ArrayLikeFloat: TypeAlias = (
-    Sequence[float] | NPArrayLike[tuple[Any, ...], Any] | pd.Series[float] | pl.Series | pd.Index[float]
+    Sequence[float] | NPArrayLike[tuple[Any, ...], float] | pd.Series[float] | pl.Series | pd.Index[float]
 )
 # Assumes that the user know the type of pl.Series, which is easily checked at runtime.
 ArrayLikeNumeric: TypeAlias = Sequence[int] | ArrayLikeFloat
