@@ -1,24 +1,35 @@
-from collections.abc import Sequence
-from typing import Any, Literal, Protocol, TypeAlias, TypedDict
+from collections.abc import Iterable, Iterator, Sequence
+from typing import Any, Generic, Literal, Protocol, TypeAlias, TypedDict, TypeVar
 
-import numpy as np
 import pandas as pd
 import polars as pl
-from numpy.typing import NDArray
+
+_T_co = TypeVar("_T_co", covariant=True)
+_S_co = TypeVar("_S_co", bound=tuple[Any, ...], covariant=True)
+_D_co = TypeVar("_D_co", covariant=True)
 
 class MapCenter(TypedDict):
     lat: int | float
     lon: int | float
 
+class NPTypeLike(Protocol, Generic[_T_co]): ...
+
+class NPArrayLike(Protocol, Generic[_S_co, _D_co]):
+    def __iter__(self) -> Iterator[_D_co]: ...
+
 class DataFrameCompatible(Protocol):
     # More details at https://data-apis.org/dataframe-protocol/latest/index.html
     def __dataframe__(self, nan_as_null: bool = ..., allow_copy: bool = ...) -> Any: ...
 
-ArrayLike: TypeAlias = Sequence[Any] | pd.Series | pl.Series | NDArray[Any] | pd.Index
-ArrayLikeFloat: TypeAlias = Sequence[float] | NDArray[np.float64] | pd.Series[float] | pl.Series | pd.Index[float]
+ArrayLike: TypeAlias = Sequence[Any] | pd.Series | pl.Series | NPArrayLike[tuple[Any, ...], Any] | pd.Index
+ArrayLikeFloat: TypeAlias = (
+    Sequence[float] | NPArrayLike[tuple[Any, ...], Any] | pd.Series[float] | pl.Series | pd.Index[float]
+)
 # Assumes that the user know the type of pl.Series, which is easily checked at runtime.
 ArrayLikeNumeric: TypeAlias = Sequence[int] | ArrayLikeFloat
-ArrayLikeString: TypeAlias = Sequence[str] | NDArray[np.str_] | pd.Series[str] | pl.Series | pd.Index[str]
+ArrayLikeString: TypeAlias = (
+    Sequence[str] | NPArrayLike[tuple[str, ...], str] | pd.Series[str] | pl.Series | pd.Index[str]
+)
 FrameOrDict: TypeAlias = DataFrameCompatible | dict[str, ArrayLike] | Sequence[dict[str, Any]]
 ColumnData: TypeAlias = str | int | ArrayLike
 MultiColumnData: TypeAlias = ColumnData | list[ColumnData]
